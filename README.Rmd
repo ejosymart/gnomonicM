@@ -1,0 +1,71 @@
+---
+output:
+  md_document:
+    variant: gfm
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+library(gnomonicM)
+```
+
+# gnomonicM
+
+
+**Estimate Natural Mortality (M) throughout the life history of species**
+This package allows to estimate Natutal mortality for different life stages for organism, usualy fish and invertebrates, based on the gnomonic interval approach.
+
+The estimation should be 
+
+
+## Instalation
+
+```R
+install.packages("gnomonicM")
+```
+
+## Examples
+
+This is a basic example which shows you how to estimate natural mortality using the data on Caddy (1996):
+
+## 1. Deterministic
+
+```{r}
+model <- gnomonic(nInterval   = 7, 
+                  eggDuration = 2, 
+                  longevity   = 365, 
+                  fecundity   = 200000, 
+                  a_init      = 2)
+
+print(model)
+```
+
+
+## 2. Stochastic
+
+```{r}
+modelUniform <- gnomonicStochastic(nInterval     = 7, 
+                                   eggDuration   = 2,
+                                   longevity     = 365,
+                                   distr         = "uniform", 
+                                   min_fecundity = 100000, 
+                                   max_fecundity = 300000, 
+                                   niter         = 1000, 
+                                   a_init        = 2)
+```
+
+
+For more details, please read the vignettes of this package.
+
+
+### References
+
+Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.
+
+Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
+
+Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi: 10.1016/j.fishres.2004.04.008.

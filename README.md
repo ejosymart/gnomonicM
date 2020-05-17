@@ -1,0 +1,80 @@
+# gnomonicM
+
+**Estimate Natural Mortality (M) throughout the life history of
+species** This package allows to estimate Natutal mortality for
+different life stages for organism, usualy fish and invertebrates, based
+on the gnomonic interval approach.
+
+The estimation should be
+
+## Instalation
+
+``` r
+install.packages("gnomonicM")
+```
+
+## Examples
+
+This is a basic example which shows you how to estimate natural
+mortality using the data on Caddy (1996):
+
+## 1\. Deterministic
+
+``` r
+model <- gnomonic(nInterval   = 7, 
+                  eggDuration = 2, 
+                  longevity   = 365, 
+                  fecundity   = 200000, 
+                  a_init      = 2)
+
+print(model)
+#> The value of proportionality constant (alpha) = 1.381646 
+#> 
+#> -------------------------------------------------------- 
+#> 
+#> The value of constant proportion of the overall natural death rate (G) = 1.644704 
+#> 
+#> -------------------------------------------------------- 
+#> 
+#> Main results of gnomonic methods: 
+#> 
+#>   Gnonomic_interval interval_duration_day total_duration M_day  M_year No_Surv
+#> 1                 1                 2.000              2 0.822 300.158   38614
+#> 2                 2                 2.763              5 0.595 217.247    7455
+#> 3                 3                 6.581             11 0.250  91.217    1439
+#> 4                 4                15.674             27 0.105  38.300     278
+#> 5                 5                37.330             64 0.044  16.081      54
+#> 6                 6                88.907            153 0.018   6.752      10
+#> 7                 7               211.745            365 0.008   2.835       2
+```
+
+## 2\. Stochastic
+
+``` r
+modelUniform <- gnomonicStochastic(nInterval     = 7, 
+                                   eggDuration   = 2,
+                                   longevity     = 365,
+                                   distr         = "uniform", 
+                                   min_fecundity = 100000, 
+                                   max_fecundity = 300000, 
+                                   niter         = 1000, 
+                                   a_init        = 2)
+#> [1] "You are using a 'uniform distribution' for fecundity"
+```
+
+For more details, please read the vignettes of this package.
+
+### References
+
+Caddy JF (1991). Death rates and time intervals: is there an alternative
+to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138.
+doi: 10.1007/BF00157581.
+
+Caddy JF (1996). Modelling natural mortality with age in short-lived
+invertebrate populations: definition of a strategy of gnomonic time
+division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
+
+Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005).
+Natural mortality and life history stage duration of Pacific sardine
+(Sardinops caeruleus) based on gnomonic time divisions. Fish Res
+71:103–114. doi: 10.1016/j.fishres.2004.04.008.

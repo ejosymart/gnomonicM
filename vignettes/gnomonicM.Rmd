@@ -16,7 +16,7 @@ vignette: >
 library(gnomonicM)
 ```
 
-This vignette introduces you to `gnomonicM` package and provide a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invetebrates.
+This vignette introduces you to `gnomonicM` package and provide a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invertebrates.
 
 ### Install package
 The package is in the developing phase.
@@ -25,7 +25,7 @@ install.packages("gnomonicM")
 ```
 
 ### 1. Natural mortality (M) via deterministic method
-For estimating *M* we will use the data provided by Caddy (1996) based in a species with: a lifespan of one year, egg sateg duration of 2 days, a lifespan of one year (365 days) a mean lifetime fecundity (*MLF*) of 200 000 eggs and a initial constant proportionality (\alpha) value of 2.
+For estimating *M* we will use the data provided by Caddy (1996) based in a species with: 7 gnomonic intervals, egg stage duration of 2 days, a lifespan of one year (365 days), a mean lifetime fecundity (*MLF*) of 200 000 eggs and a initial constant proportionality (\alpha) value of 2.
 
 ```{r echo=TRUE}
 model <- gnomonic(nInterval   = 7, 
@@ -51,9 +51,9 @@ modelAddInfo <- gnomonic(nInterval   = 7,
 The `NA` values in the argument `addInfo` should be written to complete the length of the vector, in this case the length of the vector is equal to `nInterval` - 1.
 
 ### Print and plot for deterministic method
-Print the results of the "model" or "modelAddInfo". The output is an object of class "gnomos". This object contains a list with estimate constant proportionality value (\alpha), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
+Print the results of the `model` or `modelAddInfo`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value (\alpha), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
 
-For plotting, an object of class "gnomos" is required. The function `plot` generates a scatter plot with the values of *M* for each gnomonic interval. You can modify the `xlab`, `ylab`, the color via `bg` and the size, also you can pass arguments to the plot method.
+For plotting, an object of class `gnomos` is required. The function `plot` generates a scatter plot with the values of *M* for each gnomonic interval. You can modify the labels via `xlab`, `ylab`, the color via `bg` and the sizes of points in the scatter plot, also you can pass arguments to the plot method.
 
 
 ```{r echo = TRUE}
@@ -72,10 +72,9 @@ plot(modelAddInfo, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue
 ### 2. Natural mortality (M) via stochastic method
 The function to be used to estime *M* is `gnomonicStochastic`. In the previous estimation of natural mortality based on the `gnomonic` function did not include any measures of deviation. In this method we calculated these measures, assuming that the main source of uncertainty and variability was the mean lifetime fecundity (*MLF*). 
 
-We have included (until now) three different distribution function via the argument `distr`. It could be `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. Once you choose a particular distribution function, you must to include additional information related with the minimum, maximum, mean and sd of *MLF*. 
+We have included (until now) three different distribution function via the argument `distr`. It could be `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. Once you choose a particular distribution function, you must to include additional information related with the minimum, maximum, mean and standar deviation (sd) of *MLF*. 
 
-We will use the same information of the above examples but including uncertainty in the `fecundity` (*MLF*).
-In the folowing cases, we simulated 1000 estimates of natural mortality for each gnomonic intevals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval and the standard error was represented by the standard deviation ($\sigma_{i}$).
+We will use the same information of the above examples but including uncertainty in the argument `fecundity` (*MLF*). In the folowing cases, we simulated 1000 estimates of natural mortality for each gnomonic intevals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval and the standard error was represented by the standard deviation ($\sigma_{i}$).
 
 ```{r echo=TRUE}
 modelUniform <- gnomonicStochastic(nInterval     = 7, 
@@ -122,7 +121,7 @@ modelTriangle <- gnomonicStochastic(nInterval     = 7,
 
 
 ### Print and plot for stochastic method
-Printing and ploting the result of the stochastic method follow the same idea that deterministic. The diference in print is that result includes the *niter* values of *G* amd *fecundity*, the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
+Printing and ploting the result of the stochastic method follow the same idea that deterministic method. The difference in print is that result includes the *niter* values of *G* and *fecundity*, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
 
 
 ```{r echo = TRUE, results = 'hide'}

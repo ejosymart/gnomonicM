@@ -121,7 +121,6 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
 
     minimize <- function(param, ...){
       d    <- c(eggDuration, addInfo)
-      d[1] <- eggDuration
       for(i in 2:nInterval){
         if(!is.na(d[i])) next
         d[i] <- d[1]*param*(param+1)^(seq_len(nInterval)[i]-2)
@@ -133,7 +132,6 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
     a   <- newuoa(par = a_init, fn = minimize)$par
 
     delta    <- c(eggDuration, addInfo)
-    delta[1] <- eggDuration
     for(i in 2:nInterval){
       if(!is.na(delta[i])) next
       delta[i] <- delta[1]*a*(a+1)^(seq_len(nInterval)[i]-2)
@@ -347,7 +345,6 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 
     minimize <- function(param, ...){
       d    <- c(eggDuration, addInfo)
-      d[1] <- eggDuration
       for(i in 2:nInterval){
         if(!is.na(d[i])) next
         d[i] <- d[1]*param*(param+1)^(seq_len(nInterval)[i]-2)
@@ -359,7 +356,6 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
     a   <- newuoa(par = a_init, fn = minimize)$par
 
     delta    <- c(eggDuration, addInfo)
-    delta[1] <- eggDuration
     for(i in 2:nInterval){
       if(!is.na(delta[i])) next
       delta[i] <- delta[1]*a*(a+1)^(seq_len(nInterval)[i]-2)

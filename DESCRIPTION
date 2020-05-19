@@ -3,7 +3,9 @@ Type: Package
 Title: Estimate Natural Mortality for different life stages
 Version: 0.1.0
 Date: 2020-05-16
-Authors@R: c(person("Josymar", "Torrejon-Magallanes", email = "ejosymart@gmail.com", role = c("cre", "aut")))
+Authors@R: c(person("Josymar", "Torrejon-Magallanes", role = c("aut", "cre"), email = "ejosymart@gmail.com"),
+             person("Francisco", "Arreguin-Sanchez", role = "ctb", email = "farregui@ipn.mx"),
+             person("Enrique", "Morales-Bojorquez", role = "ctb", email = "emorales@cibnor.mx"))
 Maintainer: Josymar Torrejon-Magallanes <ejosymart@gmail.com>
 Description: Estimate natural mortality throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach.
     It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death.

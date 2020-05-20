@@ -9,7 +9,7 @@ gnomonic(nInterval, eggDuration, addInfo = NULL, longevity, fecundity, a_init)
 \arguments{
 \item{nInterval}{a numeric value that represents the number of gnomonic intervals.}
 
-\item{eggDuration}{a numerc value with the eggstage duration- first gnomonic interval (days).}
+\item{eggDuration}{a numeric value with the eggstage duration- first gnomonic interval (days).}
 
 \item{addInfo}{a numeric vector with additional information related to the observed duration of the others gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.}
 

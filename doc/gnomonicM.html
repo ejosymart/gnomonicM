@@ -384,7 +384,7 @@ summary {
                   longevity   = 365, 
                   fecundity   = 200000, 
                   a_init      = 2)</code></pre>
-<p>If you have additional informtion related to the duration of the others gnomonic intervals you could provide this in the argument <code>addInfo</code>. For example, we assume that the duration of the second and fifth gnomonic interval is equal to 4 and 40 days respectively, so we have to include this information as follows:</p>
+<p>If you have additional information related to the duration of the others gnomonic intervals you could provide this in the argument <code>addInfo</code>. For example, we assume that the duration of the second and fifth gnomonic interval is equal to 4 and 40 days respectively, so we have to include this information as follows:</p>
 <pre class="r"><code>modelAddInfo &lt;- gnomonic(nInterval   = 7, 
                          eggDuration = 2, 
                          addInfo     = c(4, NA, NA, 40, NA, NA),
@@ -444,9 +444,9 @@ print(modelAddInfo)</code></pre>
 </div>
 <div id="natural-mortality-m-via-stochastic-method" class="section level3">
 <h3>2. Natural mortality (M) via stochastic method</h3>
-<p>The function to be used to estime <em>M</em> is <code>gnomonicStochastic</code>. In the previous estimation of natural mortality based on the <code>gnomonic</code> function did not include any measures of deviation. In this method we calculated these measures, assuming that the main source of uncertainty and variability was the mean lifetime fecundity (<em>MLF</em>).</p>
-<p>We have included (until now) three different distribution function via the argument <code>distr</code>. It could be <code>distr = &#39;normal&#39;</code>, <code>distr = &#39;uniform&#39;</code> and <code>distr = &#39;triangle&#39;</code>. Once you choose a particular distribution function, you must to include additional information related with the minimum, maximum, mean and standar deviation (sd) of <em>MLF</em>.</p>
-<p>We will use the same information of the above examples but including uncertainty in the argument <code>fecundity</code> (<em>MLF</em>). In the folowing cases, we simulated 1000 estimates of natural mortality for each gnomonic intevals and estimated mean mortality rate (<span class="math inline">\(\bar{M_i}\)</span>), the confidence interval and the standard error was represented by the standard deviation (<span class="math inline">\(\sigma_{i}\)</span>).</p>
+<p>The function to be used to estimate <em>M</em> is <code>gnomonicStochastic</code>. In the previous estimation of natural mortality based on the <code>gnomonic</code> function did not include any measures of deviation. In this method we calculated these measures, assuming that the main source of uncertainty and variability was the mean lifetime fecundity (<em>MLF</em>).</p>
+<p>We have included (until now) three different distribution function via the argument <code>distr</code>. It could be <code>distr = &#39;normal&#39;</code>, <code>distr = &#39;uniform&#39;</code> and <code>distr = &#39;triangle&#39;</code>. Once you choose a particular distribution function, you must to include additional information related with the minimum, maximum, mean and standard deviation (sd) of <em>MLF</em>.</p>
+<p>We will use the same information of the above examples but including uncertainty in the argument <code>fecundity</code> (<em>MLF</em>). In the following cases, we simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate (<span class="math inline">\(\bar{M_i}\)</span>), the confidence interval and the standard error was represented by the standard deviation (<span class="math inline">\(\sigma_{i}\)</span>).</p>
 <pre class="r"><code>modelUniform &lt;- gnomonicStochastic(nInterval     = 7, 
                                    eggDuration   = 2,
                                    longevity     = 365,
@@ -488,7 +488,7 @@ print(modelAddInfo)</code></pre>
 </div>
 <div id="print-and-plot-for-stochastic-method" class="section level3">
 <h3>Print and plot for stochastic method</h3>
-<p>Printing and ploting the result of the stochastic method follow the same idea that deterministic method. The difference in print is that result includes the <em>niter</em> values of <em>G</em> and <em>fecundity</em>, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.</p>
+<p>Printing and plotting the result of the stochastic method follow the same idea that deterministic method. The difference in print is that result includes the <em>niter</em> values of <em>G</em> and <em>fecundity</em>, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.</p>
 <pre class="r"><code>#The results are not shown.
 print(modelUniform)</code></pre>
 <pre class="r"><code>plot(modelUniform, main = &quot;Uniform distribution in MLF&quot;)</code></pre>
@@ -502,9 +502,9 @@ print(modelUniform)</code></pre>
 </div>
 <div id="references" class="section level3">
 <h3>References</h3>
-<p>Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.</p>
-<p>Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.</p>
-<p>Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi: 10.1016/j.fishres.2004.04.008.</p>
+<p>Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Reviews in Fish Biology and Fisheries 1:109–138. doi: 10.1007/BF00157581.</p>
+<p>Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquatic Living Resource 9:197–207. doi: 10.1051/alr:1996023.</p>
+<p>Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fisheries Research 71:103–114. doi: 10.1016/j.fishres.2004.04.008.</p>
 <p>Torrejon-Magallanes J, Arreguín-Sánchez F, Morales-Bojórquez E (in prep). Natural mortality estimation through the life history of Pacific chub mackerel (Scomber japonicus): a gnomonic approach.</p>
 </div>
 

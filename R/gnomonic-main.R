@@ -6,7 +6,7 @@
 #' @importFrom graphics axis box boxplot plot points hist par abline
 #' @importFrom stats quantile rnorm runif sd
 #' @importFrom utils installed.packages
-#' @title Estimate Natural Mortality for different lifestages.
+#' @title Estimate Natural Mortality for different life stages.
 #'
 #' @description Estimate natural mortality (M) throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach. It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death.
 #' @name gnomonicM-package
@@ -15,7 +15,7 @@
 #' @author Josymar Torrejon-Magallanes <ejosymart@@gmail.com>
 #' @details Package: gnomonicM
 #' @details Type: Package
-#' @details The natural mortality (M) estimation throughout different lifestages is based on the gnomonic approach (Caddy, 1991, 1996), but we include new features.
+#' @details The natural mortality (M) estimation throughout different life stages is based on the gnomonic approach (Caddy, 1991, 1996), but we include new features.
 #'
 #' In the gnomonic model, the estimation of \eqn{M_{i}} for each gnomonic interval \eqn{\Delta_{i}} requires -at least- information about:
 #' (i) number of development stages throughout the life cycle i \eqn{in} \eqn{1, …n}.
@@ -74,7 +74,7 @@ NULL
 #'
 #' Estimate natural mortality based on gnomonic interval approach.
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
-#' @param eggDuration a numerc value with the eggstage duration- first gnomonic interval (days).
+#' @param eggDuration a numeric value with the eggstage duration- first gnomonic interval (days).
 #' @param addInfo a numeric vector with additional information related to the observed duration of the others gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species (days).
 #' @param fecundity a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female.
@@ -257,11 +257,11 @@ plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste(
 #' Estimate natural mortality based on gnomonic interval approach with different distribution in fecundity.
 #'
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
-#' @param eggDuration a numerc value with the eggstage duration- first gnomonic interval (days).
+#' @param eggDuration a numeric value with the eggstage duration- first gnomonic interval (days).
 #' @param addInfo a numeric vector with additional information related to the observed duration of the others gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species (days).
 #' @param fecundity a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female if a normal or triangle distribution is assumed.
-#' @param sd_fecundity a numeric value indicating the standard deviation of fecundity if a nomal distribution is assumed.
+#' @param sd_fecundity a numeric value indicating the standard deviation of fecundity if a normal distribution is assumed.
 #' @param min_fecundity a numeric value indicating the minimum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param max_fecundity a numeric value indicating the maximum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param distr a character string indicating the distribution to be applied: \code{"uniform"}, \code{"triangle"} or \code{"normal"}
@@ -280,7 +280,7 @@ plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste(
 #'
 #' \code{fecundity} the 'n' iter values of fecundity based on the distribution assumed.
 #'
-#' \code{results} a dataframe with the duration ("interval_duration_day"), mean, confidence interval and standard deviation of natural mortality ("M_lowe", "M", "M_upper", "M_sd") for each gnomonic interval.
+#' \code{results} a dataframe with the duration ("interval_duration_day"), mean, confidence interval and standard deviation of natural mortality ("M_lower", "M", "M_upper", "M_sd") for each gnomonic interval.
 #' @details Estimate natural mortality (M) based on gnomonic interval approach .
 #'
 #' The argument \code{nInterval} is NULL by default. If you have -at least- one observed value for the duration of the other gnomonic intervals

@@ -4,7 +4,7 @@
 \name{gnomonicM-package}
 \alias{gnomonicM-package}
 \alias{gnomonicM}
-\title{Estimate Natural Mortality for different lifestages.}
+\title{Estimate Natural Mortality for different life stages.}
 \description{
 Estimate natural mortality (M) throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach. It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death.
 }

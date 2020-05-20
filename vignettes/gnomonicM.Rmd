@@ -25,7 +25,7 @@ install.packages("gnomonicM")
 ```
 
 ### 1. Natural mortality (M) via deterministic method
-For estimating *M* we will use the data provided by Caddy (1996) based in a species with: 7 gnomonic intervals, egg stage duration of 2 days, a lifespan of one year (365 days), a mean lifetime fecundity (*MLF*) of 200 000 eggs and a initial constant proportionality (\alpha) value of 2.
+For estimating *M* we will use the data provided by Caddy (1996) based in a species with: 7 gnomonic intervals, egg stage duration of 2 days, a lifespan of one year (365 days), a mean lifetime fecundity (*MLF*) of 200 000 eggs and a initial constant proportionality ($\alpha$) value of 2.
 
 ```{r echo=TRUE}
 model <- gnomonic(nInterval   = 7, 

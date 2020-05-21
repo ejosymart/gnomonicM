@@ -38,9 +38,9 @@ gnomonicStochastic(
 
 \item{distr}{a character string indicating the distribution to be applied: \code{"uniform"}, \code{"triangle"} or \code{"normal"}}
 
-\item{a_init}{a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.}
+\item{a_init}{a numeric value indicating the initial parameter related to the proportionality constant optimized by iterative solution via univariate (1-dim.) minimization.}
 
-\item{niter}{number of iterations (bootstrap resampling).}
+\item{niter}{a single numeric value representing the number of iterations.}
 
 \item{seed}{a single value, interpreted as an integer.}
 }

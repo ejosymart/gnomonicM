@@ -56,7 +56,7 @@
 #'
 #' \deqn{G} = -ln((\frac{2}{MLF})^{\frac{1}{n}})
 #'
-#' The final solution is to estimate the proportionality constant (\alpha) parameter by iterative solution.
+#' The final solution is to estimate the proportionality constant (\alpha) parameter by iterative solution via univariate (1-dim.) minimization.
 #'
 #' @references Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.
 #' @references Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
@@ -265,8 +265,8 @@ plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste(
 #' @param min_fecundity a numeric value indicating the minimum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param max_fecundity a numeric value indicating the maximum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param distr a character string indicating the distribution to be applied: \code{"uniform"}, \code{"triangle"} or \code{"normal"}
-#' @param a_init a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.
-#' @param niter number of iterations (bootstrap resampling).
+#' @param a_init a numeric value indicating the initial parameter related to the proportionality constant optimized by iterative solution via univariate (1-dim.) minimization.
+#' @param niter a single numeric value representing the number of iterations.
 #' @param seed a single value, interpreted as an integer.
 #' @return A list of class 'gnomosBoot'.
 #'

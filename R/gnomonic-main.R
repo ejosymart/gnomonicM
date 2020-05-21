@@ -200,15 +200,16 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
 #' @export
 #' @method print gnomos
 print.gnomos <- function(x, ...){
-  if (!inherits(x, "gnomos"))
-    stop("Use only with 'gnomos' objects")
+
+  if(!inherits(x, "gnomos"))
+    stop("Use only with 'gnomos' objects.")
 
   data <- x
   cat('The value of proportionality constant (alpha) =', data$a, "\n\n")
   cat("--------------------------------------------------------", "\n\n")
   cat('The value of constant proportion of the overall natural death rate (G) =', data$G, "\n\n")
   cat("--------------------------------------------------------", "\n\n")
-  cat('Main results of gnomonic methods:', "\n\n")
+  cat('Main results of gnomonic method:', "\n\n")
   print(data$results)
   return(invisible())
 }
@@ -233,8 +234,8 @@ print.gnomos <- function(x, ...){
 plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste("M (day"^"-1", ")")),
                         bg = "lightgrey", cex = 1.75, pch = 21, ...){
 
-  if (!inherits(x, "gnomos"))
-    stop("Use only with 'gnomos' objects")
+  if(!inherits(x, "gnomos"))
+    stop("Use only with 'gnomos' objects.")
 
   data <- x
 
@@ -450,8 +451,9 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 #' @export
 #' @method print gnomosBoot
 print.gnomosBoot <- function(x, ...){
-  if (!inherits(x, "gnomosBoot"))
-    stop("Use only with 'gnomosBoot' objects")
+
+  if(!inherits(x, "gnomosBoot"))
+    stop("Use only with 'gnomosBoot' objects.")
 
   data <- x
   cat('The value of proportionality constant (alpha) =', data$a, "\n\n")
@@ -461,7 +463,7 @@ print.gnomosBoot <- function(x, ...){
   cat('The value of M for each gnomonic interval for each iteration:', "\n\n")
   print(data$M)
   cat("--------------------------------------------------------", "\n\n")
-  cat('Main results of gnomonic methods:', "\n")
+  cat('Main results of gnomonic method:', "\n")
   print(data$results)
   return(invisible())
 }
@@ -486,8 +488,8 @@ print.gnomosBoot <- function(x, ...){
 plot.gnomosBoot <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste(bar(M), " (day"^"-1",")")),
                             col = "lightgrey", boxwex = 0.25, ...){
 
-  if (!inherits(x, "gnomosBoot"))
-    stop("Use only with 'gnomosBoot' objects")
+  if(!inherits(x, "gnomosBoot"))
+    stop("Use only with 'gnomosBoot' objects.")
 
   data <- x
 

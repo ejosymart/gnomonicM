@@ -373,8 +373,12 @@ summary {
 <p>This vignette introduces you to <code>gnomonicM</code> package and provide a way to estimate <strong>Natural Mortality (M) throughout the life history of species</strong>, mainly fish and invertebrates.</p>
 <div id="install-package" class="section level3">
 <h3>Install package</h3>
-<p>The package is in the developing phase.</p>
+<p>The package is in the developing phase. You can install from CRAN:</p>
 <pre class="r"><code>install.packages(&quot;gnomonicM&quot;)</code></pre>
+<p>Or the development version from github:</p>
+<pre class="r"><code># install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;ejosymart/gnomonicM&quot;)</code></pre>
+<p>After that call the package:</p>
 </div>
 <div id="natural-mortality-m-via-deterministic-method" class="section level3">
 <h3>1. Natural mortality (M) via deterministic method</h3>
@@ -407,7 +411,7 @@ print(model)</code></pre>
 ## 
 ## -------------------------------------------------------- 
 ## 
-## Main results of gnomonic methods: 
+## Main results of gnomonic method: 
 ## 
 ##   Gnonomic_interval interval_duration_day total_duration M_day  M_year No_Surv
 ## 1                 1                 2.000              2 0.822 300.158   38614
@@ -429,7 +433,7 @@ print(modelAddInfo)</code></pre>
 ## 
 ## -------------------------------------------------------- 
 ## 
-## Main results of gnomonic methods: 
+## Main results of gnomonic method: 
 ## 
 ##   Gnonomic_interval interval_duration_day total_duration M_day  M_year No_Surv
 ## 1                 1                 2.000              2 0.822 300.158   38614

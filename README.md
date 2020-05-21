@@ -13,6 +13,17 @@ The estimation should be
 install.packages("gnomonicM")
 ```
 
+Or the development version from github:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("ejosymart/gnomonicM")
+```
+
+``` r
+library("gnomonicM")
+```
+
 ## Examples
 
 This is a basic example which shows you how to estimate natural
@@ -36,7 +47,7 @@ print(model)
 #> 
 #> -------------------------------------------------------- 
 #> 
-#> Main results of gnomonic methods: 
+#> Main results of gnomonic method: 
 #> 
 #>   Gnonomic_interval interval_duration_day total_duration M_day  M_year No_Surv
 #> 1                 1                 2.000              2 0.822 300.158   38614

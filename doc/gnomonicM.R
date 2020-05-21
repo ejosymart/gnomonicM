@@ -1,8 +1,12 @@
-## ---- echo = FALSE, message = FALSE-------------------------------------------
-library(gnomonicM)
-
 ## ---- eval=FALSE--------------------------------------------------------------
 #  install.packages("gnomonicM")
+
+## ---- eval=FALSE--------------------------------------------------------------
+#  # install.packages("devtools")
+#  devtools::install_github("ejosymart/gnomonicM")
+
+## ---- echo = FALSE, message = FALSE-------------------------------------------
+library(gnomonicM)
 
 ## ----echo=TRUE----------------------------------------------------------------
 model <- gnomonic(nInterval   = 7, 

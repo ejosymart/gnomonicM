@@ -11,7 +11,9 @@ Description: Estimate natural mortality throughout the life history for organism
     It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death.
 Depends: R (>= 3.5.0)
 Imports: minqa, triangle, grDevices, graphics, stats, utils
-Suggests: rmarkdown, knitr
+Suggests: 
+    rmarkdown,
+    knitr
 VignetteBuilder: knitr
 License: GPL-2
 LazyData: TRUE

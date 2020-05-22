@@ -27,7 +27,7 @@ library("gnomonicM")
 ## Examples
 
 This is a basic example which shows you how to estimate natural
-mortality using the data on Caddy (1996):
+mortality based on gnomonic approach using the data on Caddy (1996):
 
 ## 1\. Deterministic
 

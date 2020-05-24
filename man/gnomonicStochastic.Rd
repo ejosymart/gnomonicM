@@ -28,7 +28,7 @@ gnomonicStochastic(
 
 \item{longevity}{a numeric value indicating the lifespan of the species (days).}
 
-\item{fecundity}{a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female if a normal or triangle distribution is assumed.}
+\item{fecundity}{a numeric value indicating the mean or the mode of the fecundity as the number of eggs produced for a female if a normal or triangular distribution is assumed, respectively.}
 
 \item{sd_fecundity}{a numeric value indicating the standard deviation of fecundity if a normal distribution is assumed.}
 

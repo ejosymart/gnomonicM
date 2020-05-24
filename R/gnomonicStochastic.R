@@ -6,7 +6,7 @@
 #' @param eggDuration a numeric value with the eggstage duration- first gnomonic interval (days).
 #' @param addInfo a numeric vector with additional information related to the observed duration of the others gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species (days).
-#' @param fecundity a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female if a normal or triangle distribution is assumed.
+#' @param fecundity a numeric value indicating the mean or the mode of the fecundity as the number of eggs produced for a female if a normal or triangular distribution is assumed, respectively.
 #' @param sd_fecundity a numeric value indicating the standard deviation of fecundity if a normal distribution is assumed.
 #' @param min_fecundity a numeric value indicating the minimum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param max_fecundity a numeric value indicating the maximum range of fecundity if a uniform or triangle distribution is assumed.

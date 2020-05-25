@@ -6,6 +6,7 @@ output:
   html_document:
     highlight: default
     toc: yes
+    fig_caption: true
 vignette: >
   %\VignetteIndexEntry{gnomonicM}
   %\VignetteEngine{knitr::rmarkdown}
@@ -66,18 +67,18 @@ modelAddInfo <- gnomonic(nInterval   = 7,
 The `NA` values in the argument `addInfo` should be written to complete the length of the vector, in this case the length of the vector is equal to `nInterval` - 1.
 
 ### Print and plot for deterministic method
-Print the results of the `model` or `modelAddInfo`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value (\alpha), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
+Print the results of the `model` or `modelAddInfo`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value ($\alpha$), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
 
 For plotting, an object of class `gnomos` is required. The function `plot` generates a scatter plot with the values of *M* for each gnomonic interval. You can modify the labels via `xlab`, `ylab`, the color via `bg` and the sizes of points in the scatter plot, also you can pass arguments to the plot method.
 
 
 ```{r echo = TRUE}
-#No additional information in the duration of gnomonic intervals
+#No additional information in the duration of gnomonic intervals.
 print(model)
 
 plot(model)
 
-#With additional information in the duration of gnomonic intervals
+#With additional information in the duration of gnomonic intervals.
 print(modelAddInfo)
 
 plot(modelAddInfo, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue")
@@ -140,7 +141,7 @@ Printing and plotting the result of the stochastic method follow the same idea t
 
 
 ```{r echo = TRUE, results = 'hide'}
-#The results are not shown.
+#The results are not shown here. Please run it in your console.
 print(modelUniform)
 
 ```
@@ -160,6 +161,4 @@ Caddy JF (1991). Death rates and time intervals: is there an alternative to the 
 
 Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquatic Living Resource 9:197–207. doi: 10.1051/alr:1996023.
 
-Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fisheries Research 71:103–114. doi: 10.1016/j.fishres.2004.04.008.
-
-Torrejon-Magallanes J, Arreguín-Sánchez F, Morales-Bojórquez E (in prep). Natural mortality estimation through the life history of Pacific chub mackerel (Scomber japonicus): a gnomonic approach.
+Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (*Sardinops caeruleus*) based on gnomonic time divisions. Fisheries Research 71:103–114. doi: 10.1016/j.fishres.2004.04.008.

@@ -7,7 +7,7 @@ output:
     highlight: default
     toc: yes
 vignette: >
-  %\VignetteIndexEntry{sizeMat}
+  %\VignetteIndexEntry{gnomonicM}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

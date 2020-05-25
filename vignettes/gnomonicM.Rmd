@@ -12,6 +12,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r, echo = FALSE, message = FALSE}
+library(gnomonicM)
+```
+
+
 This vignette introduces you to `gnomonicM` package and provide a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invertebrates.
 
 
@@ -28,6 +33,11 @@ Or the development version from github:
 devtools::install_github("ejosymart/gnomonicM")
 ```
 
+
+After that call the package:
+```{r, eval=FALSE}
+library("gnomonicM")
+```
 
 ### 1. Natural mortality (M) via deterministic method
 For estimating *M* we will use the data provided by Caddy (1996) based in a species with: 7 gnomonic intervals, egg stage duration of 2 days, a lifespan of one year (365 days), a mean lifetime fecundity (*MLF*) of 200 000 eggs and a initial constant proportionality ($\alpha$) value of 2.

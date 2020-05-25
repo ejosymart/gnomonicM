@@ -20,6 +20,8 @@ Or the development version from github:
 devtools::install_github("ejosymart/gnomonicM")
 ```
 
+After that call the package:
+
 ``` r
 library("gnomonicM")
 ```
@@ -29,7 +31,7 @@ library("gnomonicM")
 This is a basic example which shows you how to estimate natural
 mortality based on gnomonic approach using the data on Caddy (1996):
 
-## 1\. Deterministic
+## 1\. Deterministic method
 
 ``` r
 model <- gnomonic(nInterval   = 7, 

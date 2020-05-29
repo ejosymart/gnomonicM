@@ -85,50 +85,23 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
     stop("HEY! 'normal' distribution requires 'fecundity', 'sd_fecundity' value. Review this value!")
 
 
-  if(!is.null(addInfo)){
+  if(is.null(addInfo)){
+
+    output <- .noAddInfo(nInterval = nInterval,
+                         eggDuration = eggDuration,
+                         longevity = longevity,
+                         a_init = a_init)
+
+  }else{
 
     if(length(addInfo) != nInterval-1) stop('The length of addInfo vector must be equal to nInterval-1')
 
-    minimize <- function(param, ...){
-      d    <- c(eggDuration, addInfo)
-      for(i in 2:nInterval){
-        if(!is.na(d[i])) next
-        d[i] <- d[1]*param*(param+1)^(seq_len(nInterval)[i]-2)
-      }
-      min <- abs(longevity - sum(d))
-      return(min)
-    }
+    output <- .AddInfo(nInterval = nInterval,
+                       eggDuration = eggDuration,
+                       longevity = longevity,
+                       a_init = a_init,
+                       addInfo = addInfo)
 
-    a   <- newuoa(par = a_init, fn = minimize)$par
-
-    delta    <- c(eggDuration, addInfo)
-    for(i in 2:nInterval){
-      if(!is.na(delta[i])) next
-      delta[i] <- delta[1]*a*(a+1)^(seq_len(nInterval)[i]-2)
-    }
-
-  }
-
-
-  if(is.null(addInfo)){
-
-    minimize <- function(param, ...){
-      d    <- numeric(nInterval)
-      d[1] <- eggDuration
-      for(i in 2:nInterval){
-        d[i] <- d[1]*param*(param+1)^(seq_len(nInterval)[i]-2)
-      }
-      min <- abs(longevity - sum(d))
-      return(min)
-    }
-
-    a   <- newuoa(par = a_init, fn = minimize)$par
-
-    delta    <- numeric(nInterval)
-    delta[1] <- eggDuration
-    for(i in 2:nInterval){
-      delta[i] <- delta[1]*a*(a+1)^(seq_len(nInterval)[i]-2)
-    }
   }
 
 
@@ -147,12 +120,11 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
     fec <- rnorm(n = niter, mean = fecundity, sd = sd_fecundity)
   }
 
-
   G   <- -log((2/fec)^(1/nInterval))
 
   M   <- vector()
   for(j in seq_len(niter)){
-    m <- G[j]/delta
+    m <- G[j]/output$delta
     M <- rbind(M, m)
     M <- data.frame(M)
   }
@@ -165,14 +137,14 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 
 
   tab <- data.frame(Gnonomic_interval = seq_len(nInterval),
-                    duration          = round(delta, 3),
-                    total_duration    = round(cumsum(delta), 0),
+                    duration          = round(output$delta, 3),
+                    total_duration    = round(cumsum(output$delta), 0),
                     M_lower           = as.numeric(M_IC[1,]),
                     M                 = as.numeric(M_mean),
                     M_upper           = as.numeric(M_IC[2,]),
                     M_sd              = as.numeric(M_sd))
 
-  data <- list(a = a, G = G, mean_G = mean(G), M = M, fecundity = fec, results = tab)
+  data <- list(a = output$a, G = G, mean_G = mean(G), M = M, fecundity = fec, results = tab)
 
   class(data) <- c("gnomosBoot", class(data))
 

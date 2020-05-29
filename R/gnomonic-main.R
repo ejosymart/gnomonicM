@@ -115,56 +115,29 @@ NULL
 gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
                      longevity, fecundity, a_init) {
 
-  if(!is.null(addInfo)){
-
-    if(length(addInfo) != nInterval-1) stop('The length of addInfo vector must be equal to nInterval-1')
-
-    minimize <- function(param, ...){
-      d    <- c(eggDuration, addInfo)
-      for(i in 2:nInterval){
-        if(!is.na(d[i])) next
-        d[i] <- d[1]*param*(param+1)^(seq_len(nInterval)[i]-2)
-      }
-      min <- abs(longevity - sum(d))
-      return(min)
-    }
-
-    a   <- newuoa(par = a_init, fn = minimize)$par
-
-    delta    <- c(eggDuration, addInfo)
-    for(i in 2:nInterval){
-      if(!is.na(delta[i])) next
-      delta[i] <- delta[1]*a*(a+1)^(seq_len(nInterval)[i]-2)
-    }
-
-  }
-
 
   if(is.null(addInfo)){
 
-    minimize <- function(param, ...){
-      d    <- numeric(nInterval)
-      d[1] <- eggDuration
-      for(i in 2:nInterval){
-        d[i] <- d[1]*param*(param+1)^(seq_len(nInterval)[i]-2)
-      }
-      min <- abs(longevity - sum(d))
-      return(min)
-    }
+    output <- .noAddInfo(nInterval = nInterval,
+                         eggDuration = eggDuration,
+                         longevity = longevity,
+                         a_init = a_init)
 
-    a   <- newuoa(par = a_init, fn = minimize)$par
+  }else{
 
-    delta    <- numeric(nInterval)
-    delta[1] <- eggDuration
-    for(i in 2:nInterval){
-      delta[i] <- delta[1]*a*(a+1)^(seq_len(nInterval)[i]-2)
-    }
+    if(length(addInfo) != nInterval-1) stop('The length of addInfo vector must be equal to nInterval-1')
+
+    output <- .AddInfo(nInterval   = nInterval,
+                       eggDuration = eggDuration,
+                       longevity   = longevity,
+                       a_init      = a_init,
+                       addInfo     = addInfo)
 
   }
 
 
   G <- -log((2/fecundity)^(1/nInterval))
-  M <- G/delta
+  M <- G/output$delta
 
   abundance    <- numeric(nInterval)
   for(i in seq_len(nInterval)){
@@ -172,13 +145,13 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
   }
 
   tab <- data.frame(Gnonomic_interval     = seq_len(nInterval),
-                    interval_duration_day = round(delta, 3),
-                    total_duration        = round(cumsum(delta), 0),
+                    interval_duration_day = round(output$delta, 3),
+                    total_duration        = round(cumsum(output$delta), 0),
                     M_day                 = round(M, 3),
                     M_year                = round(M*365, 3),
                     No_Surv               = round(abundance, 0))
 
-  data <- list(a = a, G = G, results = tab)
+  data <- list(a = output$a, G = G, results = tab)
 
   class(data) <- c("gnomos", class(data))
 

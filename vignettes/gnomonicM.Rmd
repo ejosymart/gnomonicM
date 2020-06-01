@@ -18,7 +18,7 @@ library(gnomonicM)
 ```
 
 
-This vignette introduces you to `gnomonicM` package and provide a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invertebrates.
+This vignette introduces you to `gnomonicM` package and provides a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invertebrates.
 
 
 ### Install package
@@ -35,7 +35,7 @@ devtools::install_github("ejosymart/gnomonicM")
 ```
 
 
-After that call the package:
+After that, call the package:
 ```{r, eval=FALSE}
 library("gnomonicM")
 ```

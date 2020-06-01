@@ -8,14 +8,14 @@
 #' @importFrom utils installed.packages
 #' @title Estimate Natural Mortality for different life stages.
 #'
-#' @description Estimate natural mortality (M) throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach. It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death.
+#' @description Estimate natural mortality (M) throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach. It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death (G).
 #' @name gnomonicM-package
 #' @aliases gnomonicM-package gnomonicM
 #' @docType package
 #' @author Josymar Torrejon-Magallanes <ejosymart@@gmail.com>
 #' @details Package: gnomonicM
 #' @details Type: Package
-#' @details The natural mortality (M) estimation throughout different life stages is based on the gnomonic approach (Caddy, 1991, 1996), but we include new features.
+#' @details The natural mortality (M) estimation throughout different life stages is based on the gnomonic approach (Caddy, 1991, 1996), including new features in this package-version.
 #'
 #' In the gnomonic model, the estimation of \eqn{M_{i}} for each gnomonic interval \eqn{\Delta_{i}} requires -at least- information about:
 #' (i) number of development stages throughout the life cycle i \eqn{in} \eqn{1, …n}.

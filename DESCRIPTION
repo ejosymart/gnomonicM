@@ -2,7 +2,7 @@ Package: gnomonicM
 Type: Package
 Title: Estimate Natural Mortality for different life stages
 Version: 0.1.0
-Date: 2020-05-16
+Date: 2020-06-01
 Authors@R: c(person("Josymar", "Torrejon-Magallanes", role = c("aut", "cre"), email = "ejosymart@gmail.com"),
              person("Francisco", "Arreguin-Sanchez", role = "aut", email = "farregui@ipn.mx"),
              person("Enrique", "Morales-Bojorquez", role = "aut", email = "emorales@cibnor.mx"))

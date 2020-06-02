@@ -13,7 +13,48 @@ Package: gnomonicM
 
 Type: Package
 
+The natural mortality (M) estimation throughout different life stages is based on the gnomonic approach (Caddy, 1991, 1996), including new features in this package-version.
 
+In the gnomonic model, the estimation of \eqn{M_{i}} for each gnomonic interval \eqn{\Delta_{i}} requires -at least- information about:
+(i) number of development stages throughout the life cycle i \eqn{in} \eqn{1, …n}.
+(ii) the duration of the first life stage corresponding to first gnomonic interval (\eqn{\Delta_{1}}, egg stage),
+(iii) the mean lifetime fecundity \eqn{MLF}, and
+(iv) the lifespan of the species. As additional information, the duration of the other developments stages or gnomonic intervals (larval, juvenile, adults) could be provided.
+
+According to Caddy (1996) and Martinez-Aguilar (2005), whatever the function of \eqn{M} with age, knowing the number of individuals (\eqn{N})
+at the beginning of the year and divide a year into specific number \eqn{i = 1, 2, 3, ..., n} of smaller intervals:
+
+\deqn{N_{i} = MLF  for i = 1}
+\deqn{N_{i} = N_{i-1} e^-(M_{i} * \Delta_{i}) for i > 1}
+
+where:
+
+\eqn{M_{i}} is the average value for natural mortality rate, that integrates the declining death rate through the short time interval duration \eqn{\Delta_{i}}. The \eqn{N_{i}}
+is the survivors from previous interval, only for the first interval (\eqn{\Delta_{1}}) is assumed that the numbers of haching eggs (initial population) is equivalent to
+the mean lifetime fecundity (\eqn{MLF}).
+
+The duration of first gnomonic interval \eqn{\Delta_{1}} is equal to the time elapsed after the moment of hatching \eqn{t_{1}}.
+The duration of the subsequent gnomonic intervals (\eqn{i > 1}) are estimated following:
+
+\deqn{\Delta_{i} = \Delta_{1}  \alpha  (\alpha + 1)^{i-2}}
+
+where,
+\eqn{\Delta_{i}}: Duration of the gnomonic interval when \eqn{i > 1}.
+\eqn{\Delta_{1}}: Duration of the first gnomonic interval \eqn{t_{1}}.
+\eqn{\alpha}: Proportionality constant.
+\eqn{i}: \eqn{i^{th}} gnomonic interval.
+
+The \eqn{M_{i}} is estimated as follows:
+
+\deqn{M_{i} = \frac{G}{\Delta_{i, i-1}}}
+
+where \eqn{G} is the constant proportion of the overall natural death rate. The \eqn{G} value is calculated so that the number  of individuals surviving to the last
+gnomonic time-interval is \eqn{N_{n} = 2} following the assumptiion of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
+The new equation for \eqn{G} is expressed:
+
+\deqn{G} = -ln((\frac{2}{MLF})^{\frac{1}{n}})
+
+The final solution is to estimate the proportionality constant (\alpha) parameter by iterative solution via univariate (1-dim.) minimization.
 }
 \examples{
 #See examples for functions gnomonic() and gnomonicStochastic().

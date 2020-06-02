@@ -32,7 +32,7 @@
 #' where:
 #'
 #' \eqn{M_{i}} is the average value for natural mortality rate, that integrates the declining death rate through the short time interval duration \eqn{\Delta_{i}}. The \eqn{N_{i}}
-#' is the survivors from previous interval, only for the first interval (\eqn{\Delta_{1}}) is assumed that the numbers of haching eggs (initial population) is equivalent to
+#' is the survivors from previous interval, only for the first interval (\eqn{\Delta_{1}}) is assumed that the numbers of hatching eggs (initial population) is equivalent to
 #' the mean lifetime fecundity (\eqn{MLF}).
 #'
 #' The duration of first gnomonic interval \eqn{\Delta_{1}} is equal to the time elapsed after the moment of hatching \eqn{t_{1}}.

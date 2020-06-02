@@ -9,7 +9,7 @@ Authors@R: c(person("Josymar", "Torrejon-Magallanes", role = c("aut", "cre"), em
 Maintainer: Josymar Torrejon-Magallanes <ejosymart@gmail.com>
 Description: Estimate natural mortality throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach.
     It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death.
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.6.0)
 Imports: minqa, triangle, grDevices, graphics, stats, utils
 Suggests: 
     rmarkdown,

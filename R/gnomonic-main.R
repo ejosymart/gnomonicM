@@ -54,9 +54,9 @@
 #' gnomonic time-interval is \eqn{N_{n} = 2} following the assumptiion of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
 #' The new equation for \eqn{G} is expressed:
 #'
-#' \deqn{G} = -ln((\frac{2}{MLF})^{\frac{1}{n}})
+#' \deqn{G = -ln((\frac{2}{MLF})^{\frac{1}{n}})}
 #'
-#' The final solution is to estimate the proportionality constant (\alpha) parameter by iterative solution via univariate (1-dim.) minimization.
+#' The final solution is to estimate the proportionality constant (\eqn{\alpha}) parameter by iterative solution via univariate (1-dim.) minimization.
 #'
 #' @references Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.
 #' @references Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.

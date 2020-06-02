@@ -52,9 +52,9 @@ where \eqn{G} is the constant proportion of the overall natural death rate. The 
 gnomonic time-interval is \eqn{N_{n} = 2} following the assumptiion of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
 The new equation for \eqn{G} is expressed:
 
-\deqn{G} = -ln((\frac{2}{MLF})^{\frac{1}{n}})
+\deqn{G = -ln((\frac{2}{MLF})^{\frac{1}{n}})}
 
-The final solution is to estimate the proportionality constant (\alpha) parameter by iterative solution via univariate (1-dim.) minimization.
+The final solution is to estimate the proportionality constant (\eqn{\alpha}) parameter by iterative solution via univariate (1-dim.) minimization.
 }
 \examples{
 #See examples for functions gnomonic() and gnomonicStochastic().

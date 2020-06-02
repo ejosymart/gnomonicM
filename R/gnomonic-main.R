@@ -92,7 +92,6 @@ NULL
 #' you should provide this as a vector which length must be nInterval - 1, for example \code{addInfo = c(3, NA, NA, NA, NA, NA)}) for a \code{nInterval = 7}.
 #'
 #' @references Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
-#' @exportClass gnomos
 #' @examples
 #' #The values are based on Caddy (1996).
 #' model <- gnomonic(nInterval = 7, eggDuration = 2, addInfo = NULL,

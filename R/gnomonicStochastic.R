@@ -37,7 +37,6 @@
 #'
 #' The argument \code{niter} requires a number which is related with the number of observations. If length(n) > 1, the length is taken to be the number required.
 #' can be calculated from each bootstrap sample (median and confidence intervals).
-#' @exportClass gnomosBoot
 #' @examples
 #' #The values are based on Caddy (1996).
 #' modelBoot <- gnomonicStochastic(nInterval = 7, eggDuration = 2, addInfo = NULL, longevity = 365,

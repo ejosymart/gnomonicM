@@ -1,4 +1,4 @@
-# gnomonicM package: Estimate Natural Mortality for different life --------
+# gnomonicM package: Estimate Natural Mortality for Different Life Stages --------
 
 #' @importFrom minqa newuoa
 #' @importFrom triangle rtriangle

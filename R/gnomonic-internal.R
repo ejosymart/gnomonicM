@@ -10,7 +10,7 @@
     return(min)
   }
 
-  a_param   <- newuoa(par = a_init, fn = minimize)$par
+  a_param   <- minqa::newuoa(par = a_init, fn = minimize)$par
 
   delta    <- numeric(nInterval)
   delta[1] <- eggDuration
@@ -36,7 +36,7 @@
     return(min)
   }
 
-  a_param   <- newuoa(par = a_init, fn = minimize)$par
+  a_param   <- minqa::newuoa(par = a_init, fn = minimize)$par
 
   delta    <- c(eggDuration, addInfo)
   for(i in 2:nInterval){

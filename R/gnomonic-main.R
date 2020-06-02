@@ -3,7 +3,7 @@
 #' @importFrom minqa newuoa
 #' @importFrom triangle rtriangle
 #' @importFrom grDevices colors
-#' @importFrom graphics axis box boxplot plot points hist par abline
+#' @importFrom graphics axis box boxplot points hist par abline
 #' @importFrom stats quantile rnorm runif sd
 #' @importFrom utils installed.packages
 #' @title Estimate Natural Mortality for different life stages.

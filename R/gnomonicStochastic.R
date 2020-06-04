@@ -58,9 +58,9 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 
   if(any(distr == "uniform") & any(is.null(min_fecundity),
                                    is.null(max_fecundity)))
-    stop("HEY! 'uniform' distribution requires 'fecundity', 'min_fecundity' and 'max_fecundity' values.")
+    stop("HEY! 'uniform' distribution requires 'min_fecundity' and 'max_fecundity' values.")
 
-  if(any(distr == "uniform") & any(min_fecundity >= max_fecundity))
+  if(any(distr == "uniform") & any(min_fecundity > max_fecundity))
     stop("HEY! 'max_fecundity' must be greater than 'min_fecundity' value. Review those inputs!")
 
 
@@ -69,13 +69,13 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
                                     is.null(fecundity)))
     stop("HEY! 'triangle' distribution requires 'fecundity', 'min_fecundity' and 'max_fecundity' values.")
 
-  if(any(distr == "triangle") & any(min_fecundity >= max_fecundity))
+  if(any(distr == "triangle") & any(min_fecundity > max_fecundity))
     stop("HEY! 'max_fecundity' must be greater than 'min_fecundity' value. Review those inputs!")
 
-  if(any(distr == "triangle") & any(min_fecundity >= fecundity))
+  if(any(distr == "triangle") & any(min_fecundity > fecundity))
     stop("HEY! 'fecundity' must be greater than 'min_fecundity' value. Review those inputs!")
 
-  if(any(distr == "triangle") & any(fecundity >= max_fecundity))
+  if(any(distr == "triangle") & any(fecundity > max_fecundity))
     stop("HEY! 'max_fecundity' must be greater than 'fecundity' value. Review those inputs!")
 
 

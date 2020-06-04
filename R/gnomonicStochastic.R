@@ -176,11 +176,11 @@ print.gnomosBoot <- function(x, ...){
     stop("Use only with 'gnomosBoot' objects.")
 
   data <- x
-  cat('The value of proportionality constant (alpha) =', data$a, "\n\n")
+  cat('Proportionality constant (alpha) =', data$a, "\n\n")
   cat("--------------------------------------------------------", "\n\n")
-  cat('The mean value of constant proportion of the overall natural death rate (G) =', data$mean_G, "\n\n")
+  cat('Mean value of constant proportion of the overall natural death rate (G) =', data$mean_G, "\n\n")
   cat("--------------------------------------------------------", "\n\n")
-  cat('The value of M for each gnomonic interval for each iteration:', "\n\n")
+  cat('M values for each gnomonic interval for each iteration:', "\n\n")
   print(data$M)
   cat("--------------------------------------------------------", "\n\n")
   cat('Main results of gnomonic method:', "\n")

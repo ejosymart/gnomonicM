@@ -39,7 +39,10 @@ model <- gnomonic(nInterval   = 7,
                   longevity   = 365, 
                   fecundity   = 200000, 
                   a_init      = 2)
+#> -------------------------------------------------------- 
+#> 
 #> You are only considering the egg stage duration = 2 
+#> 
 #> --------------------------------------------------------
 
 print(model)
@@ -74,8 +77,12 @@ modelUniform <- gnomonicStochastic(nInterval     = 7,
                                    max_fecundity = 300000, 
                                    niter         = 1000, 
                                    a_init        = 2)
-#> You are only considering the egg stage duration = 2 
 #> -------------------------------------------------------- 
+#> 
+#> You are only considering the egg stage duration = 2 
+#> 
+#> -------------------------------------------------------- 
+#> 
 #> [1] "You are using a 'uniform distribution' for fecundity"
 ```
 

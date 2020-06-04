@@ -117,8 +117,9 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
 
   if(is.null(addInfo)){
 
-    cat('You are only considering the egg stage duration =', eggDuration, "\n")
-    cat("--------------------------------------------------------", "\n")
+    cat("--------------------------------------------------------", "\n\n")
+    cat('You are only considering the egg stage duration =', eggDuration, "\n\n")
+    cat("--------------------------------------------------------", "\n\n")
 
     output <- .noAddInfo(nInterval = nInterval,
                          eggDuration = eggDuration,

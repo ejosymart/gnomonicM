@@ -86,6 +86,9 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 
   if(is.null(addInfo)){
 
+    cat('You are only considering the egg stage duration =', eggDuration, "\n")
+    cat("--------------------------------------------------------", "\n")
+
     output <- .noAddInfo(nInterval = nInterval,
                          eggDuration = eggDuration,
                          longevity = longevity,

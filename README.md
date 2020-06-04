@@ -31,7 +31,7 @@ library("gnomonicM")
 This is a basic example which shows you how to estimate natural
 mortality based on gnomonic approach using the data on Caddy (1996):
 
-## 1\. Deterministic method
+## Deterministic method
 
 ``` r
 model <- gnomonic(nInterval   = 7, 
@@ -39,6 +39,8 @@ model <- gnomonic(nInterval   = 7,
                   longevity   = 365, 
                   fecundity   = 200000, 
                   a_init      = 2)
+#> You are only considering the egg stage duration = 2 
+#> --------------------------------------------------------
 
 print(model)
 #> The value of proportionality constant (alpha) = 1.381646 
@@ -61,7 +63,7 @@ print(model)
 #> 7                 7               211.745            365 0.008   2.835       2
 ```
 
-## 2\. Stochastic
+## Stochastic
 
 ``` r
 modelUniform <- gnomonicStochastic(nInterval     = 7, 
@@ -72,6 +74,8 @@ modelUniform <- gnomonicStochastic(nInterval     = 7,
                                    max_fecundity = 300000, 
                                    niter         = 1000, 
                                    a_init        = 2)
+#> You are only considering the egg stage duration = 2 
+#> -------------------------------------------------------- 
 #> [1] "You are using a 'uniform distribution' for fecundity"
 ```
 

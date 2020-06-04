@@ -45,7 +45,7 @@ library("gnomonicM")
 
 This is a basic example which shows you how to estimate natural mortality based on gnomonic approach using the data on Caddy (1996):
 
-## 1. Deterministic method
+## Deterministic method
 
 ```{r}
 model <- gnomonic(nInterval   = 7, 
@@ -58,7 +58,7 @@ print(model)
 ```
 
 
-## 2. Stochastic
+## Stochastic
 
 ```{r}
 modelUniform <- gnomonicStochastic(nInterval     = 7, 

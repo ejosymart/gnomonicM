@@ -46,11 +46,11 @@ model <- gnomonic(nInterval   = 7,
 #> --------------------------------------------------------
 
 print(model)
-#> The value of proportionality constant (alpha) = 1.381646 
+#> Proportionality constant (alpha) = 1.381646 
 #> 
 #> -------------------------------------------------------- 
 #> 
-#> The value of constant proportion of the overall natural death rate (G) = 1.644704 
+#> Constant proportion of the overall natural death rate (G) = 1.644704 
 #> 
 #> -------------------------------------------------------- 
 #> 

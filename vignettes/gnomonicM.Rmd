@@ -146,7 +146,7 @@ plot(model_cm_lf, main = "Natural mortality vector estimated \nfor chub mackerel
 ```
 
 
-### Other distribution in *MLF*
+### 3 Different distributions in *MLF*
 In this senction we test diferente distribution function in the *MLF* via the argument `distr`. There are three options: `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. You must to include particular information related with the minimum, maximum, mean and standard deviation (sd) of *MLF* depending of the selected distribution function that you choose. 
 
 ```{r echo=TRUE}
@@ -190,7 +190,7 @@ plot(modelTriangle, main = "Triangular distribution in MLF")
 ```
 
 
-# The other species 
+### 4 Testing in other species 
 We have included the information of the previous studies that used the gnomonic approach and the estimates were compared with the “best” results provided by the authors (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave us the chance to assess the approach in different taxa (fish, invertebrates) and history life (demersal, pelagic, benthic, short and large longevity).
 
 

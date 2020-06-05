@@ -265,7 +265,7 @@ plot(Isostichopus, main = "M for Isostichopus badionotus", col = "skyblue")
 
 
 ### References
-Aranceta-Garza F, Arreguín-Sánchez F, Ponce-Díaz G, Seijo JC. 2016. Natural mortality of three commercial penaeid shrimps (Litopenaeus vannamei, L. stylirostris and Farfantepenaeus californiensis) of the Gulf of California using gnomonic time divisions. Scientia Marina 80:199–206. DOI: 10.3989/scimar.04326.29A
+Aranceta-Garza F, Arreguín-Sánchez F, Ponce-Díaz G, Seijo JC. 2016. Natural mortality of three commercial penaeid shrimps (*Litopenaeus vannamei*, *L. stylirostris* and *Farfantepenaeus californiensis*) of the Gulf of California using gnomonic time divisions. Scientia Marina 80:199–206. DOI: 10.3989/scimar.04326.29A
 
 Caddy JF. 1991. Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Reviews in Fish Biology and Fisheries 1:109–138. DOI: 10.1007/BF00157581.
 
@@ -273,10 +273,10 @@ Caddy JF. 1996. Modelling natural mortality with age in short-lived invertebrate
 
 Giménez-Hurtado E, Arreguín-Sánchez F, Lluch-Cota SE. 2009. Natural Mortality Rates during Life History Stages of the Red Grouper on Campeche Bank, Mexico. North American Journal of Fisheries Management 29:216–222. DOI: 10.1577/M06-041.1.
 
-Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E. 2005. Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fisheries Research 71:103–114. DOI: 10.1016/j.fishres.2004.04.008.
+Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E. 2005. Natural mortality and life history stage duration of Pacific sardine (*Sardinops caeruleus*) based on gnomonic time divisions. Fisheries Research 71:103–114. DOI: 10.1016/j.fishres.2004.04.008.
 
-Martínez-Aguilar S, Díaz Uribe JG, De Anda-Montañez JA, Cisneros-Mata MÁ. 2010. Natural mortality and life history stage duration for the jumbo squid (Dosidicus gigas) in the Gulf of California, Mexico, using the gnomonic time division. Ciencia Pesquera 18:31–42.
+Martínez-Aguilar S, Díaz Uribe JG, De Anda-Montañez JA, Cisneros-Mata MÁ. 2010. Natural mortality and life history stage duration for the jumbo squid (*Dosidicus gigas*) in the Gulf of California, Mexico, using the gnomonic time division. Ciencia Pesquera 18:31–42.
 
-Ramírez-Rodríguez M, Arreguín-Sánchez F. 2003. Life history stage duration and natural mortality for the pink shrimp Farfantepenaeus duorarum (Burkenroad, 1939) in the southern Gulf of Mexico, using the gnomonic model for time division. Fisheries Research 60:45–51. DOI: 10.1016/S0165-7836(02)00064-4.
+Ramírez-Rodríguez M, Arreguín-Sánchez F. 2003. Life history stage duration and natural mortality for the pink shrimp *Farfantepenaeus duorarum* (Burkenroad, 1939) in the southern Gulf of Mexico, using the gnomonic model for time division. Fisheries Research 60:45–51. DOI: 10.1016/S0165-7836(02)00064-4.
 
-Romero-Gallardo S, Velazquez-Abunader I, Alberto Lopez-Rocha J, Garza-Gisholt E. 2018. Natural mortality estimates throughout the life history of the sea cucumber Isostichopus Badionotus (Holothuroidea: Aspidochirotida). PeerJ 6. DOI: 10.7717/peerj.5235.
+Romero-Gallardo S, Velazquez-Abunader I, Alberto Lopez-Rocha J, Garza-Gisholt E. 2018. Natural mortality estimates throughout the life history of the sea cucumber *Isostichopus badionotus* (Holothuroidea: Aspidochirotida). PeerJ 6. DOI: 10.7717/peerj.5235.

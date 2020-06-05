@@ -156,9 +156,10 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
                     duration          = round(output$delta, 3),
                     total_duration    = round(cumsum(output$delta), 0),
                     M_lower           = as.numeric(M_IC[1,]),
-                    M                 = as.numeric(M_mean),
+                    M_day             = as.numeric(M_mean),
                     M_upper           = as.numeric(M_IC[2,]),
                     M_sd              = as.numeric(M_sd),
+                    M_year            = as.numeric(M_mean)*365,
                     No_Surv           = round(abundance, 0))
 
   data <- list(a = output$a, G = G, mean_G = mean(G), M = M, fecundity = fec, results = tab)
@@ -194,7 +195,7 @@ print.gnomosBoot <- function(x, ...){
   cat("--------------------------------------------------------", "\n\n")
   cat('Mean value of constant proportion of the overall natural death rate (G) =', data$mean_G, "\n\n")
   cat("--------------------------------------------------------", "\n\n")
-  cat('M values for each gnomonic interval for each iteration:', "\n\n")
+  cat('M values in 1/day for each gnomonic interval for each iteration:', "\n\n")
   print(data$M)
   cat("--------------------------------------------------------", "\n\n")
   cat('Main results of gnomonic method:', "\n")
@@ -211,6 +212,7 @@ print.gnomosBoot <- function(x, ...){
 #' @param ylab a title for the y axis.
 #' @param col color for the boxplot of M value for each gnomonic intervals.
 #' @param boxwex a scale factor to be applied to all boxes in order to make the boxes narrower or wider.
+#' @param dayUnits TRUE by default, to show the M values in 1/day unit. FALSE to show the M values in 1/year units.
 #' @param \dots Additional arguments to the plot method.
 #' @examples
 #' modelBoot <- gnomonicStochastic(nInterval = 7, eggDuration = 2, addInfo = NULL, longevity = 365,
@@ -219,20 +221,30 @@ print.gnomosBoot <- function(x, ...){
 #' plot(modelBoot)
 #' @export
 #' @method plot gnomosBoot
-plot.gnomosBoot <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste(bar(M), " (day"^"-1",")")),
-                            col = "lightgrey", boxwex = 0.25, ...){
+plot.gnomosBoot <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
+                            col = "lightgrey", boxwex = 0.25, dayUnits = TRUE, ...){
 
   if(!inherits(x, "gnomosBoot"))
     stop("Use only with 'gnomosBoot' objects.")
 
   data <- x
 
-  par(mar = c(4, 6, 4, 1))
-  boxplot(data$M, boxwex = boxwex, xlab = xlab,
-          ylab = ylab, col = col, axes = FALSE, ...)
-  axis(1, seq(from = 1, to = nrow(data$results), by = 1))
-  axis(2, las = 2)
-  box()
+  if(isTRUE(dayUnits)){
+    par(mar = c(4, 6, 4, 1))
+    boxplot(data$M, boxwex = boxwex, xlab = xlab,
+            ylab = expression(paste("M (day"^"-1", ")")), col = col, axes = FALSE, ...)
+    axis(1, seq(from = 1, to = nrow(data$results), by = 1))
+    axis(2, las = 2)
+    box()
+  }else{
+    par(mar = c(4, 6, 4, 1))
+    boxplot(data$M*365, boxwex = boxwex, xlab = xlab,
+            ylab = expression(paste("M (year"^"-1", ")")), col = col, axes = FALSE, ...)
+    axis(1, seq(from = 1, to = nrow(data$results), by = 1))
+    axis(2, las = 2)
+    box()
+  }
+
 
   return(invisible(NULL))
 }

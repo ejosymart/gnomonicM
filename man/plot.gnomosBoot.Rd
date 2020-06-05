@@ -7,9 +7,10 @@
 \method{plot}{gnomosBoot}(
   x,
   xlab = "Gnomonic intervals",
-  ylab = expression(paste(bar(M), " (day"^"-1", ")")),
+  ylab = NULL,
   col = "lightgrey",
   boxwex = 0.25,
+  dayUnits = TRUE,
   ...
 )
 }
@@ -23,6 +24,8 @@
 \item{col}{color for the boxplot of M value for each gnomonic intervals.}
 
 \item{boxwex}{a scale factor to be applied to all boxes in order to make the boxes narrower or wider.}
+
+\item{dayUnits}{TRUE by default, to show the M values in 1/day unit. FALSE to show the M values in 1/year units.}
 
 \item{\dots}{Additional arguments to the plot method.}
 }

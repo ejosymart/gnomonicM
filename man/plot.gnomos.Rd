@@ -7,10 +7,11 @@
 \method{plot}{gnomos}(
   x,
   xlab = "Gnomonic intervals",
-  ylab = expression(paste("M (day"^"-1", ")")),
+  ylab = NULL,
   bg = "lightgrey",
   cex = 1.75,
   pch = 21,
+  dayUnits = TRUE,
   ...
 )
 }
@@ -26,6 +27,8 @@
 \item{cex}{character expansion in the regression.}
 
 \item{pch}{the character indicating the type of plotting.}
+
+\item{dayUnits}{TRUE by default, to show the M values in 1/day unit. FALSE to show the M values in 1/year units.}
 
 \item{\dots}{Additional arguments to the plot method.}
 }

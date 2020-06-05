@@ -247,20 +247,20 @@ Isostichopus <- gnomonicStochastic(nInterval     = 6,
 
 ```
 
-
+You can display the plots showing the M values in day o year units. By default the units of M is in days (`dayUnits = 'TRUE'`). You can modify it via the argument `dayUnits = 'FALSE'`, which will show a plot with the M values in years. 
 
 ```{r echo = TRUE}
-plot(Farfantopenaeus, main = "M for Farfantopenaeus duorarum")
+plot(Farfantopenaeus, main = "M for Farfantopenaeus duorarum", dayUnits = FALSE)
 
-plot(Vannamei, main = "M for Sardinops caeruleus", col = "darkred")
+plot(Vannamei, main = "M for Penaeus vannamei", col = "darkred", dayUnits = FALSE)
 
-plot(Sardinops, main = "M for Epinephelus morio", col = "blue")
+plot(Sardinops, main = "M for Sardinops caeruleus", col = "blue")
 
-plot(Epinephelus, main = "M for Dodisicus gigas", col = "darkgreen")
+plot(Epinephelus, main = "M for Epinephelus morio", col = "darkgreen", dayUnits = FALSE)
 
-plot(Dosidicus, main = "M for Penaeus vannamei", col = "purple")
+plot(Dosidicus, main = "M for Dodisicus gigas", col = "purple", dayUnits = FALSE)
 
-plot(Isostichopus, main = "M for Isostichopus badionotus", col = "skyblue")
+plot(Isostichopus, main = "M for Isostichopus badionotus", col = "skyblue", dayUnits = FALSE)
 ```
 
 

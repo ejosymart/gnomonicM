@@ -196,8 +196,9 @@ print.gnomos <- function(x, ...){
 #' @param xlab a title for the x axis.
 #' @param ylab a title for the y axis.
 #' @param bg a background color for the points.
-#' @param pch the character indicating the type of plotting.
 #' @param cex character expansion in the regression.
+#' @param pch the character indicating the type of plotting.
+#' @param dayUnits TRUE by default, to show the M values in 1/day unit. FALSE to show the M values in 1/year units.
 #' @param \dots Additional arguments to the plot method.
 #' @examples
 #' model <- gnomonic(nInterval = 7, eggDuration = 2, addInfo = NULL,
@@ -206,20 +207,29 @@ print.gnomos <- function(x, ...){
 #' plot(model)
 #' @export
 #' @method plot gnomos
-plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = expression(paste("M (day"^"-1", ")")),
-                        bg = "lightgrey", cex = 1.75, pch = 21, ...){
+plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
+                        bg = "lightgrey", cex = 1.75, pch = 21, dayUnits = TRUE, ...){
 
   if(!inherits(x, "gnomos"))
     stop("Use only with 'gnomos' objects.")
 
   data <- x
 
-  par(mar = c(4, 6, 4, 1))
-  plot(data$results$M_day, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_day)),
-       xlab = xlab , ylab = ylab, bg = bg , axes = FALSE, ...)
-  axis(1, seq(from = 1, to = nrow(data$results), by = 1))
-  axis(2, las = 2)
-  box()
+  if(isTRUE(dayUnits)){
+    par(mar = c(4, 6, 4, 1))
+    plot(data$results$M_day, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_day)),
+         xlab = xlab , ylab = expression(paste("M (day"^"-1", ")")), bg = bg , axes = FALSE, ...)
+    axis(1, seq(from = 1, to = nrow(data$results), by = 1))
+    axis(2, las = 2)
+    box()
+  }else{
+    par(mar = c(4, 6, 4, 1))
+    plot(data$results$M_year, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_year)),
+         xlab = xlab , ylab = expression(paste("M (year"^"-1", ")")), bg = bg , axes = FALSE, ...)
+    axis(1, seq(from = 1, to = nrow(data$results), by = 1))
+    axis(2, las = 2)
+    box()
+  }
 
   return(invisible(NULL))
 }

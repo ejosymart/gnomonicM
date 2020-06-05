@@ -138,7 +138,7 @@ print(model_cm_hf)
 print(model_cm_lf)
 ```
 
-In the previous plots, by default, the M values have $day^-1$ units. You can modify it via the argument `dayUnits = FALSE` which will show a plot with the M values in $year^-1$ units.
+In the previous plots, by default, the M values have $day^-1$ units (`dayUnits = TRUE`). You can modify it via the argument `dayUnits = FALSE` which will show a plot with the M values in $year^-1$ units.
 
 ```{r echo = TRUE}
 plot(model_cm_hf, main = "Natural mortality vector estimated \nfor chub mackerel \n egg duration = 2.33 days, MLF = [11 805 - 144 543]", dayUnits = FALSE)

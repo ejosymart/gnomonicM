@@ -60,6 +60,9 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
                                    is.null(max_fecundity)))
     stop("HEY! 'uniform' distribution requires 'min_fecundity' and 'max_fecundity' values.")
 
+  if(any(distr == "uniform") & any(!is.null(fecundity)))
+    stop("HEY! 'uniform' distribution does not require 'fecundity' (mean) value. You must only provide 'min_fecundity' and 'max_fecundity' values.")
+
   if(any(distr == "uniform") & any(min_fecundity > max_fecundity))
     stop("HEY! 'max_fecundity' must be greater than 'min_fecundity' value. Review those inputs!")
 
@@ -82,6 +85,10 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
   if(any(distr == "normal") & any(is.null(sd_fecundity),
                                   is.null(fecundity)))
     stop("HEY! 'normal' distribution requires 'fecundity', 'sd_fecundity' value. Review this value!")
+
+  if(any(distr == "normal") & any(!is.null(min_fecundity),
+                                  !is.null(max_fecundity)))
+    stop("HEY! 'normal' distribution does not require 'min_fecundity' and/or 'max_fecundity' values. You must provide 'fecundity' (mean) and 'sd_fecundity' values.")
 
 
   if(is.null(addInfo)){
@@ -109,17 +116,17 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 
 
   if(any(distr == "uniform")){
-    print("You are using a 'uniform distribution' for fecundity")
+    print("You are using a 'uniform distribution' for fecundity.")
     fec <- runif(n = niter, min = min_fecundity, max = max_fecundity)
   }
 
   if(any(distr == "triangle")){
-    print("You are using a 'triangular distribution' for fecundity")
+    print("You are using a 'triangular distribution' for fecundity.")
     fec <- rtriangle(n = niter, a = min_fecundity, b = max_fecundity, c = fecundity)
   }
 
   if(any(distr == "normal")){
-    print("You are using a 'normal distribution' for fecundity")
+    print("You are using a 'normal distribution' for fecundity.")
     fec <- rnorm(n = niter, mean = fecundity, sd = sd_fecundity)
   }
 
@@ -139,13 +146,20 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
   M_sd   <- apply(M, 2, sd)
 
 
+  abundance    <- numeric(nInterval)
+  for(i in seq_len(nInterval)){
+    abundance[i]  <- mean(fec)*(exp(-mean(G)))^(i)
+  }
+
+
   tab <- data.frame(Gnonomic_interval = seq_len(nInterval),
                     duration          = round(output$delta, 3),
                     total_duration    = round(cumsum(output$delta), 0),
                     M_lower           = as.numeric(M_IC[1,]),
                     M                 = as.numeric(M_mean),
                     M_upper           = as.numeric(M_IC[2,]),
-                    M_sd              = as.numeric(M_sd))
+                    M_sd              = as.numeric(M_sd),
+                    No_Surv           = round(abundance, 0))
 
   data <- list(a = output$a, G = G, mean_G = mean(G), M = M, fecundity = fec, results = tab)
 

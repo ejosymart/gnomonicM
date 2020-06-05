@@ -6,7 +6,7 @@
 #' @importFrom graphics axis box boxplot points hist par abline
 #' @importFrom stats quantile rnorm runif sd
 #' @importFrom utils installed.packages
-#' @title Estimate Natural Mortality for different life stages.
+#' @title Estimate Natural Mortality for Different Life Stages.
 #'
 #' @description Estimate natural mortality (M) throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach. It includes estimation of duration of each gnomonic interval (life stage) and the constant probability of death (G).
 #' @name gnomonicM-package
@@ -21,7 +21,7 @@
 #' (i) number of development stages throughout the life cycle i \eqn{in} \eqn{1, …n}.
 #' (ii) the duration of the first life stage corresponding to first gnomonic interval (\eqn{\Delta_{1}}, egg stage),
 #' (iii) the mean lifetime fecundity \eqn{MLF}, and
-#' (iv) the lifespan of the species. As additional information, the duration of the other developments stages or gnomonic intervals (larval, juvenile, adults) could be provided.
+#' (iv) the longevity of the species. As additional information, the duration of the other developments stages or gnomonic intervals (larval, juvenile, adults) could be provided.
 #'
 #' According to Caddy (1996) and Martinez-Aguilar (2005), whatever the function of \eqn{M} with age, knowing the number of individuals (\eqn{N})
 #' at the beginning of the year and divide a year into specific number \eqn{i = 1, 2, 3, ..., n} of smaller intervals:
@@ -61,7 +61,6 @@
 #' @references Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.
 #' @references Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
 #' @references Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi: 10.1016/j.fishres.2004.04.008.
-#' @references Torrejon-Magallanes J, Arreguín-Sánchez F, Morales-Bojórquez E (in prep). Natural mortality estimation through the life history of Pacific chub mackerel (Scomber japonicus): a gnomonic approach
 #' @concept gnomonic
 #' @concept natural mortality
 #' @concept fecundity
@@ -74,9 +73,9 @@ NULL
 #'
 #' Estimate natural mortality based on gnomonic interval approach.
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
-#' @param eggDuration a numeric value with the eggstage duration- first gnomonic interval (days).
+#' @param eggDuration a numeric value with the egg stage duration (first gnomonic interval) in days.
 #' @param addInfo a numeric vector with additional information related to the observed duration of the others gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
-#' @param longevity a numeric value indicating the lifespan of the species (days).
+#' @param longevity a numeric value indicating the lifespan of the species in days.
 #' @param fecundity a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female.
 #' @param a_init a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.
 #' @return A list of class 'gnomos'.

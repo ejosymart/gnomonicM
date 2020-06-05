@@ -83,7 +83,7 @@ modelUniform <- gnomonicStochastic(nInterval     = 7,
 #> 
 #> -------------------------------------------------------- 
 #> 
-#> [1] "You are using a 'uniform distribution' for fecundity"
+#> [1] "You are using a 'uniform distribution' for fecundity."
 ```
 
 For more details, please read the vignettes of this package.

@@ -88,7 +88,7 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
 
   if(any(distr == "normal") & any(!is.null(min_fecundity),
                                   !is.null(max_fecundity)))
-    stop("HEY! 'normal' distribution does not require 'min_fecundity' and/or 'max_fecundity' values. You must provide 'fecundity' (mean) and 'sd_fecundity' values.")
+    stop("HEY! 'normal' distribution does not require 'min_fecundity' and/or 'max_fecundity' values. You must only provide 'fecundity' (mean) and 'sd_fecundity' values.")
 
 
   if(is.null(addInfo)){

@@ -17,7 +17,6 @@ vignette: >
 library(gnomonicM)
 ```
 
-
 This vignette introduces you to `gnomonicM` package and provides a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invertebrates.
 
 
@@ -41,20 +40,30 @@ library("gnomonicM")
 ```
 
 ### 1. Natural mortality (M) via deterministic method
-For estimating *M* we will use the data provided by Caddy (1996) based in a species with: 7 gnomonic intervals, egg stage duration of 2 days, a lifespan of one year (365 days), a mean lifetime fecundity (*MLF*) of 200 000 eggs and a initial constant proportionality ($\alpha$) value of 2.
+For estimating *M* we will use the data provided by Caddy (1996) based in two species with: (i) seven gnomonic intervals, (ii) egg stage duration of 2 days, (iii) a longevity of one year (365 days), (iv) a mean lifetime fecundity (*MLF*) of 200000 (high fecundity, hf) and 135 eggs (low fecundity, lf) and (v) initial constant proportionality ($\alpha$) value of 2.
 
 ```{r echo=TRUE}
-model <- gnomonic(nInterval   = 7, 
-                  eggDuration = 2, 
-                  longevity   = 365, 
-                  fecundity   = 200000, 
-                  a_init      = 2)
+model_hf <- gnomonic(nInterval   = 7, 
+                     eggDuration = 2, 
+                     longevity   = 365, 
+                     fecundity   = 200000, 
+                     a_init      = 2)
 
 ```
 
-If you have additional information related to the duration of the others gnomonic intervals you could provide this in the argument `addInfo`. For example, we assume that the duration of the second and fifth gnomonic interval is equal to 4 and 40 days respectively, so we have to include this information as follows:
 
 ```{r echo=TRUE}
+model_lf <- gnomonic(nInterval   = 7, 
+                     eggDuration = 2, 
+                     longevity   = 365, 
+                     fecundity   = 200000, 
+                     a_init      = 2)
+
+```
+
+If you have additional information related to the duration of the others gnomonic intervals, you could provide this in the argument `addInfo`. For example, we assume that the duration of the second and fifth gnomonic interval is equal to 4 and 40 days respectively, so we have to include this information as follows:
+
+```{r echo=TRUE, results = 'hide'}
 modelAddInfo <- gnomonic(nInterval   = 7, 
                          eggDuration = 2, 
                          addInfo     = c(4, NA, NA, 40, NA, NA),
@@ -66,43 +75,81 @@ modelAddInfo <- gnomonic(nInterval   = 7,
 
 The `NA` values in the argument `addInfo` should be written to complete the length of the vector, in this case the length of the vector is equal to `nInterval` - 1.
 
+
 ### Print and plot for deterministic method
-Print the results of the `model` or `modelAddInfo`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value ($\alpha$), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
+Print the results of the `model_hf` or `model_lf`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value ($\alpha$), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
 
 For plotting, an object of class `gnomos` is required. The function `plot` generates a scatter plot with the values of *M* for each gnomonic interval. You can modify the labels via `xlab`, `ylab`, the color via `bg` and the sizes of points in the scatter plot, also you can pass arguments to the plot method.
 
 
 ```{r echo = TRUE}
-#No additional information in the duration of gnomonic intervals.
-print(model)
+#Species with high fecundity.
+print(model_hf)
 
-plot(model)
+plot(model_hf)
 
-#With additional information in the duration of gnomonic intervals.
-print(modelAddInfo)
+#Species with low fecundity.
+print(model_lf)
 
-plot(modelAddInfo, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue")
+plot(model_lf, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue")
 ```
 
 
-### 2. Natural mortality (M) via stochastic method
-The function to be used to estimate *M* is `gnomonicStochastic`. In the previous estimation of natural mortality based on the `gnomonic` function did not include any measures of deviation. In this method we calculated these measures, assuming that the main source of uncertainty and variability was the mean lifetime fecundity (*MLF*). 
+
+### 2. Natural mortality (M) via stochastic method chub mackerel (*Scomber japonicus*) case
+The function to be used to estimate *M* is `gnomonicStochastic`. In the previous estimation of natural mortality based on the `gnomonic` function did not include any measures of deviation. In this method we calculated these measures assuming that the main source of uncertainty and variability was the mean lifetime fecundity (*MLF*). 
 
 We have included (until now) three different distribution function via the argument `distr`. It could be `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. Once you choose a particular distribution function, you must to include additional information related with the minimum, maximum, mean and standard deviation (sd) of *MLF*. 
 
-We will use the same information of the above examples but including uncertainty in the argument `fecundity` (*MLF*). In the following cases, we simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval and the standard error was represented by the standard deviation ($\sigma_{i}$).
+We will use the information reported by the chub mackerel, based on an (i) eigth gnomonic intervals, (ii) egg stage duration of 2.33 days (56 hours), (iii) a longevity of eigth years (2920 days), (iv) a mean lifetime fecundity (*MLF*) of 78174 [11805 - 144543] and 28978 [7603 - 53921] eggs asumming uniform distribution and (v) initial constant proportionality ($\alpha$) value of 2. We simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval and the standard error was represented by the standard deviation ($\sigma_{i}$).
 
 ```{r echo=TRUE}
-modelUniform <- gnomonicStochastic(nInterval     = 7, 
-                                   eggDuration   = 2,
-                                   longevity     = 365,
-                                   distr         = "uniform", 
-                                   min_fecundity = 100000, 
-                                   max_fecundity = 300000, 
-                                   niter         = 1000, 
-                                   a_init        = 2)
+model_cm_hf <- gnomonicStochastic(nInterval     = 8, 
+                                  eggDuration   = 2.33,
+                                  longevity     = 2920,
+                                  distr         = "uniform", 
+                                  min_fecundity = 11805, 
+                                  max_fecundity = 144543, 
+                                  niter         = 1000, 
+                                  a_init        = 2)
 
 
+model_cm_lf <- gnomonicStochastic(nInterval     = 8, 
+                                  eggDuration   = 2.33,
+                                  longevity     = 2920,
+                                  distr         = "uniform", 
+                                  min_fecundity = 7603, 
+                                  max_fecundity = 53921, 
+                                  niter         = 1000, 
+                                  a_init        = 2)
+
+
+```
+
+
+### Print and plot for stochastic method
+Printing and plotting the result of the stochastic method follow the same idea that deterministic method. The difference in print is that result includes the *niter* values of *G* and *fecundity*, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
+
+
+```{r echo = TRUE, results = 'hide'}
+#The results are not shown here. Please run it in your console.
+print(model_cm_hf)
+
+print(model_cm_lf)
+```
+
+
+```{r echo = TRUE}
+plot(model_cm_hf, main = "Natural mortality vector estimated \nfor chub mackerel \n egg duration = 2.33 days, MLF = [11 805 - 144 543]")
+
+plot(model_cm_lf, main = "Natural mortality vector estimated \nfor chub mackerel \n egg duration = 2.33 days, MLF = [7 603 - 53 921]")
+```
+
+
+### Other distribution in *MLF*
+In this senction we test diferente distribution function in the *MLF* via the argument `distr`. There are three options: `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. You must to include particular information related with the minimum, maximum, mean and standard deviation (sd) of *MLF* depending of the selected distribution function that you choose. 
+
+```{r echo=TRUE}
 modelUniformAddInfo <- gnomonicStochastic(nInterval     = 7, 
                                           eggDuration   = 2,
                                           addInfo       = c(4, NA, NA, 40, NA, NA),
@@ -111,7 +158,7 @@ modelUniformAddInfo <- gnomonicStochastic(nInterval     = 7,
                                           min_fecundity = 100000, 
                                           max_fecundity = 300000, 
                                           niter         = 1000, 
-                                           a_init        = 2)
+                                          a_init        = 2)
 
 
 modelNormal <- gnomonicStochastic(nInterval     = 7, 
@@ -136,29 +183,100 @@ modelTriangle <- gnomonicStochastic(nInterval     = 7,
 ```
 
 
-### Print and plot for stochastic method
-Printing and plotting the result of the stochastic method follow the same idea that deterministic method. The difference in print is that result includes the *niter* values of *G* and *fecundity*, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
-
-
-```{r echo = TRUE, results = 'hide'}
-#The results are not shown here. Please run it in your console.
-print(modelUniform)
-
-```
-
 ```{r echo = TRUE}
-plot(modelUniform, main = "Uniform distribution in MLF")
 plot(modelUniformAddInfo, main = "Uniform distribution in MLF \nwith additional information in \nsome gnomonic intervals")
 plot(modelNormal, main = "Normal distribution in MLF")
 plot(modelTriangle, main = "Triangular distribution in MLF")
 ```
 
 
+# The other species 
+We have included the information of the previous studies that used the gnomonic approach and the estimates were compared with the “best” results provided by the authors (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave us the chance to assess the approach in different taxa (fish, invertebrates) and history life (demersal, pelagic, benthic, short and large longevity).
+
+
+```{r echo=TRUE}
+Farfantopenaeus <-  gnomonic(nInterval   = 7,
+                             eggDuration = 1.5, 
+                             longevity   = 480,
+                             fecundity   = 500000,
+                             a_init      = 1)
+
+
+Vannamei <- gnomonic(nInterval   = 7,
+                     eggDuration = 0.54, 
+                     longevity   = 365,
+                     fecundity   = 265000,   
+                     a_init      = 3)
+
+
+Sardinops <- gnomonicStochastic(nInterval     = 10,
+                                eggDuration   = 2.5, 
+                                longevity     = 2555,
+                                min_fecundity = 646763,
+                                max_fecundity = 1090678,
+                                niter         = 1000, 
+                                a_init        = 2)
+
+
+Epinephelus <- gnomonicStochastic(nInterval     = 11,
+                                  eggDuration   = 2, 
+                                  longevity     = 7300,
+                                  min_fecundity = 102000,
+                                  max_fecundity = 573500,
+                                  niter         = 1000, 
+                                  a_init        = 2)
+
+
+Dosidicus <- gnomonicStochastic(nInterval     = 5,
+                                eggDuration   = 6, 
+                                longevity     = 438,
+                                min_fecundity = 813000,
+                                max_fecundity = 25887000,
+                                niter         = 1000, 
+                                a_init        = 2)
+
+
+
+Isostichopus <- gnomonicStochastic(nInterval     = 6,
+                                   eggDuration   = 2,
+                                   longevity     = 3650,
+                                   min_fecundity = 13500,
+                                   max_fecundity = 5062490, 
+                                   niter         = 1000,
+                                   a_init        = 2)
+
+```
+
+
+
+```{r echo = TRUE}
+plot(Farfantopenaeus, main = "M for Farfantopenaeus duorarum")
+
+plot(Vannamei, main = "M for Sardinops caeruleus", col = "darkred")
+
+plot(Sardinops, main = "M for Epinephelus morio", col = "blue")
+
+plot(Epinephelus, main = "M for Dodisicus gigas", col = "darkgreen")
+
+plot(Dosidicus, main = "M for Penaeus vannamei", col = "purple")
+
+plot(Isostichopus, main = "M for Isostichopus badionotus", col = "skyblue")
+```
+
 
 ### References
+Aranceta-Garza F, Arreguín-Sánchez F, Ponce-Díaz G, Seijo JC. 2016. Natural mortality of three commercial penaeid shrimps (Litopenaeus vannamei, L. stylirostris and Farfantepenaeus californiensis) of the Gulf of California using gnomonic time divisions. Scientia Marina 80:199–206. DOI: 10.3989/scimar.04326.29A
 
-Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Reviews in Fish Biology and Fisheries 1:109–138. doi: 10.1007/BF00157581.
+Caddy JF. 1991. Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Reviews in Fish Biology and Fisheries 1:109–138. DOI: 10.1007/BF00157581.
 
-Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquatic Living Resource 9:197–207. doi: 10.1051/alr:1996023.
+Caddy JF. 1996. Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquatic Living Resources 9:197–207. DOI: 10.1051/alr:1996023.
 
-Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (*Sardinops caeruleus*) based on gnomonic time divisions. Fisheries Research 71:103–114. doi: 10.1016/j.fishres.2004.04.008.
+Giménez-Hurtado E, Arreguín-Sánchez F, Lluch-Cota SE. 2009. Natural Mortality Rates during Life History Stages of the Red Grouper on Campeche Bank, Mexico. North American Journal of Fisheries Management 29:216–222. DOI: 10.1577/M06-041.1.
+
+Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E. 2005. Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fisheries Research 71:103–114. DOI: 10.1016/j.fishres.2004.04.008.
+
+Martínez-Aguilar S, Díaz Uribe JG, De Anda-Montañez JA, Cisneros-Mata MÁ. 2010. Natural mortality and life history stage duration for the jumbo squid (Dosidicus gigas) in the Gulf of California, Mexico, using the gnomonic time division. Ciencia Pesquera 18:31–42.
+
+Ramírez-Rodríguez M, Arreguín-Sánchez F. 2003. Life history stage duration and natural mortality for the pink shrimp Farfantepenaeus duorarum (Burkenroad, 1939) in the southern Gulf of Mexico, using the gnomonic model for time division. Fisheries Research 60:45–51. DOI: 10.1016/S0165-7836(02)00064-4.
+
+Romero-Gallardo S, Velazquez-Abunader I, Alberto Lopez-Rocha J, Garza-Gisholt E. 2018. Natural mortality estimates throughout the life history of the sea cucumber Isostichopus Badionotus (Holothuroidea: Aspidochirotida). PeerJ 6. DOI: 10.7717/peerj.5235.

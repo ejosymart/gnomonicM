@@ -1,6 +1,6 @@
 ---
 title: 'gnomonicM: An R Package to Estimate Natural Mortality for different life stages'
-author: 'Josymar Torrejon-Magallanes, Francisco Arreguin-Sanchez, Enrique Morales-Bojorquez'
+author: 'Edgar Josymar Torrejon-Magallanes'
 date: "`r Sys.Date()`"
 output:
   html_document:

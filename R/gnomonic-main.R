@@ -73,8 +73,8 @@ NULL
 #'
 #' Estimate natural mortality based on gnomonic interval approach.
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
-#' @param eggDuration a numeric value with the egg stage duration (first gnomonic interval) in days.
-#' @param addInfo a numeric vector with additional information related to the observed duration of the others gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
+#' @param eggDuration a numeric value with the egg stage (first gnomonic interval) duration in days.
+#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species in days.
 #' @param fecundity a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female.
 #' @param a_init a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.

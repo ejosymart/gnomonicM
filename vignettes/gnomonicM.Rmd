@@ -21,7 +21,7 @@ This vignette introduces you to `gnomonicM` package and provides a way to estima
 
 
 ### Install package
-The package is in the developing phase. You can install from CRAN:
+You can install from CRAN:
 ```{r, eval=FALSE}
 install.packages("gnomonicM")
 ```
@@ -40,7 +40,7 @@ library("gnomonicM")
 ```
 
 ### 1. Natural mortality (M) via deterministic method
-For estimating *M* we will use the data provided by Caddy (1996) based in two species with: (i) seven gnomonic intervals, (ii) egg stage duration of 2 days, (iii) a longevity of one year (365 days), (iv) a mean lifetime fecundity (*MLF*) of 200000 (high fecundity, hf) and 135 eggs (low fecundity, lf) and (v) initial constant proportionality ($\alpha$) value of 2.
+For estimating *M* we will use the data provided by Caddy (1996) based in two species with: (i) seven gnomonic intervals, (ii) egg stage duration of 2 days, (iii) a longevity of one year (365 days), (iv) a mean lifetime fecundity (*MLF*) of 200000 (high fecundity, hf) and 135 eggs (low fecundity, lf), and (v) initial constant proportionality ($\alpha$) value of 2.
 
 ```{r echo=TRUE}
 model_hf <- gnomonic(nInterval   = 7, 
@@ -61,7 +61,7 @@ model_lf <- gnomonic(nInterval   = 7,
 
 ```
 
-If you have additional information related to the duration of the others gnomonic intervals, you could provide this in the argument `addInfo`. For example, we assume that the duration of the second and fifth gnomonic interval is equal to 4 and 40 days respectively, so we have to include this information as follows:
+If you have additional information related to the duration of the others gnomonic intervals, you could provide them via the argument `addInfo`. For example, if we assume that the duration of the second and fifth gnomonic interval is equal to 4 and 40 days respectively, we will have to include this information as follows:
 
 ```{r echo=TRUE, results = 'hide'}
 modelAddInfo <- gnomonic(nInterval   = 7, 
@@ -73,11 +73,11 @@ modelAddInfo <- gnomonic(nInterval   = 7,
 
 ```
 
-The `NA` values in the argument `addInfo` should be written to complete the length of the vector, in this case the length of the vector is equal to `nInterval` - 1.
+The `NA` values in the argument `addInfo` must be written to complete the length of the vector. In this case the length of the `addInfo` vector is equal to `nInterval` - 1.
 
 
-### Print and plot for deterministic method
-Print the results of the `model_hf` or `model_lf`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value ($\alpha$), the constant proportion of the overall natural death rate (*G*) and a dataframe with the duration (*"interval_duration_day"*) and natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
+## Print and plot for deterministic method
+Print the results of the `model_hf` or `model_lf`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value ($\alpha$), the constant proportion of the overall natural death rate (*G*), a dataframe with the duration (*"interval_duration_day"*), and the natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
 
 For plotting, an object of class `gnomos` is required. The function `plot` generates a scatter plot with the values of *M* for each gnomonic interval. You can modify the labels via `xlab`, `ylab`, the color via `bg` and the sizes of points in the scatter plot, also you can pass arguments to the plot method.
 
@@ -96,12 +96,12 @@ plot(model_lf, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue")
 
 
 
-### 2. Natural mortality (M) via stochastic method chub mackerel (*Scomber japonicus*) case
-The function to be used to estimate *M* is `gnomonicStochastic`. In the previous estimation of natural mortality based on the `gnomonic` function did not include any measures of deviation. In this method we calculated these measures assuming that the main source of uncertainty and variability was the mean lifetime fecundity (*MLF*). 
+### 2. Natural mortality (M) via stochastic method: the Pacific chub mackerel (*Scomber japonicus*) case
+The function to be used to estimate *M* is `gnomonicStochastic`. The previous estimation of natural mortality, which was based on the `gnomonic` function, did not include any measures of deviation. In this method we calculated these measures assuming that the main source of uncertainty and variability was the mean lifetime fecundity (*MLF*). 
 
-We have included (until now) three different distribution function via the argument `distr`. It could be `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. Once you choose a particular distribution function, you must to include additional information related with the minimum, maximum, mean and standard deviation (sd) of *MLF*. 
+We have included three different distribution function via the argument `distr`. It could be normal: `distr = 'normal'`, uniform: `distr = 'uniform'`, and triangular: `distr = 'triangle'`. Once you have chosen a particular distribution function, you must to include information related with the minimum, maximum, mean and standard deviation (sd) of *MLF*. 
 
-We will use the information reported by the chub mackerel, based on an (i) eigth gnomonic intervals, (ii) egg stage duration of 2.33 days (56 hours), (iii) a longevity of eigth years (2920 days), (iv) a mean lifetime fecundity (*MLF*) of 78174 [11805 - 144543] and 28978 [7603 - 53921] eggs asumming uniform distribution and (v) initial constant proportionality ($\alpha$) value of 2. We simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval and the standard error was represented by the standard deviation ($\sigma_{i}$).
+We will use the information reported by the chub mackerel, based on an (i) eight gnomonic intervals, (ii) egg stage duration of 2.33 days (56 hours), (iii) a longevity of eight years (2920 days), (iv) a mean lifetime fecundity (*MLF*) of 78174 [11805 - 144543] and 28978 [7603 - 53921] eggs assuming uniform distribution, and (v) initial constant proportionality ($\alpha$) value of 2. We simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval, and the standard deviation ($\sigma_{i}$).
 
 ```{r echo=TRUE}
 model_cm_hf <- gnomonicStochastic(nInterval     = 8, 
@@ -127,8 +127,8 @@ model_cm_lf <- gnomonicStochastic(nInterval     = 8,
 ```
 
 
-### Print and plot for stochastic method
-Printing and plotting the result of the stochastic method follow the same idea that deterministic method. The difference in print is that result includes the *niter* values of *G* and *fecundity*, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
+## Print and plot for stochastic method
+Printing and plotting the result of the stochastic method follow the same idea that deterministic method. In this case when using print it includes the *niter* values of *G* and *fecundity*, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
 
 
 ```{r echo = TRUE, results = 'hide'}
@@ -148,7 +148,7 @@ plot(model_cm_lf, main = "Natural mortality vector estimated \nfor chub mackerel
 
 
 ### 3 Different distributions in *MLF*
-In this senction we test diferente distribution function in the *MLF* via the argument `distr`. There are three options: `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. You must to include particular information related with the minimum, maximum, mean and standard deviation (sd) of *MLF* depending of the selected distribution function that you choose. 
+In this section, we test different distribution functions in the *MLF* via the argument `distr`. There are three options: `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. You must include particular information related to the minimum, maximum, mean, and standard deviation (sd) of *MLF* based on the particular distribution function. 
 
 ```{r echo=TRUE}
 modelUniformAddInfo <- gnomonicStochastic(nInterval     = 7, 
@@ -192,7 +192,7 @@ plot(modelTriangle, main = "Triangular distribution in MLF")
 
 
 ### 4 Testing in other species 
-We have included the information of the previous studies that used the gnomonic approach and the estimates were compared with the “best” results provided by the authors (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave us the chance to assess the approach in different taxa (fish, invertebrates) and history life (demersal, pelagic, benthic, short and large longevity).
+This section shows the applications to published data that used the gnomonic model (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave the chance to assess the approach in different taxa (fish, invertebrates) and history life (demersal, pelagic, benthic, short, and large life span).
 
 
 ```{r echo=TRUE}

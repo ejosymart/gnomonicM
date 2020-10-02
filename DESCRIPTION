@@ -2,7 +2,7 @@ Package: gnomonicM
 Type: Package
 Title: Estimate Natural Mortality for Different Life Stages
 Version: 1.0.0
-Date: 2020-06-02
+Date: 2020-10-02
 Authors@R: c(person("Josymar", "Torrejon-Magallanes", role = c("aut", "cre"), email = "ejosymart@gmail.com"))
 Maintainer: Josymar Torrejon-Magallanes <ejosymart@gmail.com>
 Description: Estimate natural mortality throughout the life history for organisms, mainly fish and invertebrates, based on gnomonic interval approach.

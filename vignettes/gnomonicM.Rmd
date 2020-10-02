@@ -20,7 +20,7 @@ library(gnomonicM)
 This vignette introduces you to `gnomonicM` package and provides a way to estimate **Natural Mortality (M) throughout the life history of species**, mainly fish and invertebrates.
 
 
-### Install package
+## Install package
 You can install from CRAN:
 ```{r, eval=FALSE}
 install.packages("gnomonicM")
@@ -39,7 +39,7 @@ After that, call the package:
 library("gnomonicM")
 ```
 
-### 1. Natural mortality (M) via deterministic method
+## 1. Natural mortality (M) via deterministic method
 For estimating *M* we will use the data provided by Caddy (1996) based in two species with: (i) seven gnomonic intervals, (ii) egg stage duration of 2 days, (iii) a longevity of one year (365 days), (iv) a mean lifetime fecundity (*MLF*) of 200000 (high fecundity, hf) and 135 eggs (low fecundity, lf), and (v) initial constant proportionality ($\alpha$) value of 2.
 
 ```{r echo=TRUE}
@@ -76,7 +76,7 @@ modelAddInfo <- gnomonic(nInterval   = 7,
 The `NA` values in the argument `addInfo` must be written to complete the length of the vector. In this case the length of the `addInfo` vector is equal to `nInterval` - 1.
 
 
-## Print and plot for deterministic method
+### Print and plot for deterministic method
 Print the results of the `model_hf` or `model_lf`. The output is an object of class `gnomos`. This object contains a list with the constant proportionality value ($\alpha$), the constant proportion of the overall natural death rate (*G*), a dataframe with the duration (*"interval_duration_day"*), and the natural mortality (*"M_day"* and *"M_year"*) for each gnomonic interval.
 
 For plotting, an object of class `gnomos` is required. The function `plot` generates a scatter plot with the values of *M* for each gnomonic interval. You can modify the labels via `xlab`, `ylab`, the color via `bg` and the sizes of points in the scatter plot, also you can pass arguments to the plot method.
@@ -96,7 +96,7 @@ plot(model_lf, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue")
 
 
 
-### 2. Natural mortality (M) via stochastic method: the Pacific chub mackerel (*Scomber japonicus*) case
+## 2. Natural mortality (M) via stochastic method: the Pacific chub mackerel (*Scomber japonicus*) case
 The function to be used to estimate *M* is `gnomonicStochastic`. The previous estimation of natural mortality, which was based on the `gnomonic` function, did not include any measures of deviation. In this method we calculated these measures assuming that the main source of uncertainty and variability was the mean lifetime fecundity (*MLF*). 
 
 We have included three different distribution function via the argument `distr`. It could be normal: `distr = 'normal'`, uniform: `distr = 'uniform'`, and triangular: `distr = 'triangle'`. Once you have chosen a particular distribution function, you must to include information related with the minimum, maximum, mean and standard deviation (sd) of *MLF*. 
@@ -127,7 +127,7 @@ model_cm_lf <- gnomonicStochastic(nInterval     = 8,
 ```
 
 
-## Print and plot for stochastic method
+### Print and plot for stochastic method
 Printing and plotting the result of the stochastic method follow the same idea that deterministic method. In this case when using print it includes the *niter* values of *G* and *fecundity*, and the M values for each gnomonic intervals for each iteration. The plot is based on a boxplot and the arguments could be modified as in the deterministic method.
 
 
@@ -147,7 +147,7 @@ plot(model_cm_lf, main = "Natural mortality vector estimated \nfor chub mackerel
 ```
 
 
-### 3 Different distributions in *MLF*
+## 3 Different distributions in *MLF*
 In this section, we test different distribution functions in the *MLF* via the argument `distr`. There are three options: `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. You must include particular information related to the minimum, maximum, mean, and standard deviation (sd) of *MLF* based on the particular distribution function. 
 
 ```{r echo=TRUE}
@@ -191,7 +191,7 @@ plot(modelTriangle, main = "Triangular distribution in MLF")
 ```
 
 
-### 4 Testing in other species 
+## 4 Testing in other species 
 This section shows the applications to published data that used the gnomonic model (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave the chance to assess the approach in different taxa (fish, invertebrates) and history life (demersal, pelagic, benthic, short, and large life span).
 
 

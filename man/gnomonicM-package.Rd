@@ -24,9 +24,9 @@ In the gnomonic model, the estimation of \eqn{M_{i}} for each gnomonic interval 
 According to Caddy (1996) and Martinez-Aguilar (2005), the gnomonic method is supported by a negative exponential function, where the independent variable is
 \eqn{\Delta_{i}} representing the number of gnomonic intervals from \eqn{i} \eqn{in} \eqn{1,2,3, …n}, the equation is expressed as follows:
 
-\deqn{N_{i} = MLF \cdot e^{-(M_{i} \cdot \Delta_{i})}; \vspace{12pt} for i = 1}
+\deqn{N_{i} = MLF \cdot e^{-(M_{i} \cdot \Delta_{i})};  for i = 1}
 
-\deqn{N_{i} = N_{i-1} \cdot e^{-(M_{i} \cdot \Delta_{i})}; \vspace{12pt} for i > 1}
+\deqn{N_{i} = N_{i-1} \cdot e^{-(M_{i} \cdot \Delta_{i})}; \hvspace{5pt} for i > 1}
 
 where:
 

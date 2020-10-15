@@ -26,8 +26,8 @@
 #' According to Caddy (1996) and Martinez-Aguilar (2005), the gnomonic method is supported by a negative exponential function, where the independent variable is
 #' \eqn{\Delta_{i}} representing the number of gnomonic intervals from \eqn{i} \eqn{in} \eqn{1,2,3, …n}, the equation is expressed as follows:
 #'
-#' \deqn{N_{i} = MLF e^-(M_{i} * \Delta_{i}) for i = 1}
-#' \deqn{N_{i} = N_{i-1} e^-(M_{i} * \Delta_{i}) for i > 1}
+#' \deqn{N_{i} = MLF e^{-(M_{i} * \Delta_{i})} for i = 1}
+#' \deqn{N_{i} = N_{i-1} e^-{(M_{i} * \Delta_{i})} for i > 1}
 #'
 #' where:
 #'
@@ -42,8 +42,11 @@
 #'
 #' where,
 #' \eqn{\Delta_{i}}: Duration of the gnomonic interval when \eqn{i > 1}.
+#'
 #' \eqn{\Delta_{1}}: Duration of the first gnomonic interval \eqn{t_{1}}.
+#'
 #' \eqn{\alpha}: Proportionality constant.
+#'
 #' \eqn{i}: \eqn{i^{th}} gnomonic interval.
 #'
 #' The \eqn{M_{i}} is estimated as follows:

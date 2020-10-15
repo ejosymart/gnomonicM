@@ -18,15 +18,15 @@
 #' @details The natural mortality (M) estimation throughout different life stages is based on the gnomonic approach (Caddy, 1991, 1996), including new features in this package-version.
 #'
 #' In the gnomonic model, the estimation of \eqn{M_{i}} for each gnomonic interval \eqn{\Delta_{i}} requires -at least- information about:
-#' (i) number of development stages throughout the life cycle i \eqn{in} \eqn{1, …n}.
+#' (i) the number of development stages throughout the life cycle \eqn{i} \eqn{in} \eqn{1,2,3, …n}.
 #' (ii) the duration of the first life stage corresponding to first gnomonic interval (\eqn{\Delta_{1}}, egg stage),
 #' (iii) the mean lifetime fecundity \eqn{MLF}, and
 #' (iv) the longevity of the species. As additional information, the duration of the other developments stages or gnomonic intervals (larval, juvenile, adults) could be provided.
 #'
-#' According to Caddy (1996) and Martinez-Aguilar (2005), whatever the function of \eqn{M} with age, knowing the number of individuals (\eqn{N})
-#' at the beginning of the year and divide a year into specific number \eqn{i = 1, 2, 3, ..., n} of smaller intervals:
+#' According to Caddy (1996) and Martinez-Aguilar (2005), the gnomonic method is supported by a negative exponential function, where the independent variable is
+#' \eqn{\Delta_{i}} representing the number of gnomonic intervals from \eqn{i} \eqn{in} \eqn{1,2,3, …n}, the equation is expressed as follows:
 #'
-#' \deqn{N_{i} = MLF  for i = 1}
+#' \deqn{N_{i} = MLF e^-(M_{i} * \Delta_{i}) for i = 1}
 #' \deqn{N_{i} = N_{i-1} e^-(M_{i} * \Delta_{i}) for i > 1}
 #'
 #' where:
@@ -136,7 +136,6 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
                        addInfo     = addInfo)
 
   }
-
 
   G <- -log((2/fecundity)^(1/nInterval))
   M <- G/output$delta

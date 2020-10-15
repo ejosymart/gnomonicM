@@ -245,6 +245,5 @@ plot.gnomosBoot <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
     box()
   }
 
-
   return(invisible(NULL))
 }

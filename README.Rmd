@@ -56,7 +56,7 @@ print(model)
 ```
 
 
-## Stochastic
+## Stochastic method
 
 ```{r}
 modelUniform <- gnomonicStochastic(nInterval     = 7, 

@@ -27,6 +27,7 @@
 #' \eqn{\Delta_{i}} representing the number of gnomonic intervals from \eqn{i} \eqn{in} \eqn{1,2,3, …n}, the equation is expressed as follows:
 #'
 #' \deqn{N_{i} = MLF e^{-(M_{i} * \Delta_{i})} for i = 1}
+#'
 #' \deqn{N_{i} = N_{i-1} e^-{(M_{i} * \Delta_{i})} for i > 1}
 #'
 #' where:
@@ -41,6 +42,7 @@
 #' \deqn{\Delta_{i} = \Delta_{1}  \alpha  (\alpha + 1)^{i-2}}
 #'
 #' where,
+#'
 #' \eqn{\Delta_{i}}: Duration of the gnomonic interval when \eqn{i > 1}.
 #'
 #' \eqn{\Delta_{1}}: Duration of the first gnomonic interval \eqn{t_{1}}.

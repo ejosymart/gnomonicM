@@ -24,9 +24,9 @@ In the gnomonic model, the estimation of \eqn{M_{i}} for each gnomonic interval 
 According to Caddy (1996) and Martinez-Aguilar (2005), the gnomonic method is supported by a negative exponential function, where the independent variable is
 \eqn{\Delta_{i}} representing the number of gnomonic intervals from \eqn{i} \eqn{in} \eqn{1,2,3, …n}, the equation is expressed as follows:
 
-\deqn{N_{i} = MLF \cdot e^{-(M_{i} * \Delta_{i})} for i = 1}
+\deqn{N_{i} = MLF \cdot e^{-(M_{i} \cdot \Delta_{i})}; \vspace{12pt} for i = 1}
 
-\deqn{N_{i} = N_{i-1} * e^{-(M_{i} * \Delta_{i})} for i > 1}
+\deqn{N_{i} = N_{i-1} \cdot e^{-(M_{i} \cdot \Delta_{i})}; \vspace{12pt} for i > 1}
 
 where:
 
@@ -37,7 +37,7 @@ the mean lifetime fecundity (\eqn{MLF}).
 The duration of first gnomonic interval \eqn{\Delta_{1}} is equal to the time elapsed after the moment of hatching \eqn{t_{1}}.
 The duration of the subsequent gnomonic intervals (\eqn{i > 1}) are estimated following:
 
-\deqn{\Delta_{i} = \Delta_{1}  \alpha  (\alpha + 1)^{i-2}}
+\deqn{\Delta_{i} = \Delta_{1} \cdot \alpha  (\alpha + 1)^{i-2}}
 
 where,
 

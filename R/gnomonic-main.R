@@ -28,7 +28,7 @@
 #'
 #' \deqn{N_{i} = MLF e^{-(M_{i} * \Delta_{i})} for i = 1}
 #'
-#' \deqn{N_{i} = N_{i-1} e^-{(M_{i} * \Delta_{i})} for i > 1}
+#' \deqn{N_{i} = N_{i-1} e^{-(M_{i} \cdot \Delta_{i})} for i > 1}
 #'
 #' where:
 #'

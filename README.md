@@ -1,13 +1,10 @@
 # gnomonicM
 
 **Estimate Natural Mortality (M) throughout the life history of
-species** This package allows to estimate Natural mortality for
-different life stages for organism, usually fish and invertebrates,
-based on the gnomonic interval approach.
+species** This package allows to estimate Natural mortality for different life stages for organism, usually fish and invertebrates, based on the gnomonic interval approach (Caddy, 1991, 1996; Martínez-Aguilar et al., 2005). We have included improvements modifying some equations and the estimation procedure.
 
-The estimation should be
 
-## Install
+## Installation
 
 ``` r
 install.packages("gnomonicM")

@@ -79,9 +79,9 @@ NULL
 #' Estimate natural mortality based on gnomonic interval approach.
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
 #' @param eggDuration a numeric value with the egg stage (first gnomonic interval) duration in days.
-#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.
+#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals differents to the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species in days.
-#' @param fecundity a numeric value indicating the mean lifetime fecundity as the number of eggs produced for a female.
+#' @param fecundity a numeric value indicating the mean lifetime fecundity (MLF) as the number of eggs produced for a female.
 #' @param a_init a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.
 #' @return A list of class 'gnomos'.
 #'
@@ -116,19 +116,19 @@ NULL
 #' model$results
 #' @export
 gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
-                     longevity, fecundity, a_init) {
+                     longevity, fecundity, a_init){
 
 
   if(is.null(addInfo)){
 
     cat("--------------------------------------------------------", "\n\n")
-    cat('You are only considering the egg stage duration =', eggDuration, "\n\n")
+    cat('No additional information. You are only considering the egg stage duration =', eggDuration, "\n\n")
     cat("--------------------------------------------------------", "\n\n")
 
-    output <- .noAddInfo(nInterval = nInterval,
+    output <- .noAddInfo(nInterval   = nInterval,
                          eggDuration = eggDuration,
-                         longevity = longevity,
-                         a_init = a_init)
+                         longevity   = longevity,
+                         a_init      = a_init)
 
   }else{
 
@@ -220,14 +220,14 @@ plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
   data <- x
 
   if(isTRUE(dayUnits)){
-    par(mar = c(4, 6, 4, 1))
+    par(mar = c(4, 6, 1, 1))
     plot(data$results$M_day, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_day)),
          xlab = xlab , ylab = expression(paste("M (day"^"-1", ")")), bg = bg , axes = FALSE, ...)
     axis(1, seq(from = 1, to = nrow(data$results), by = 1))
     axis(2, las = 2)
     box()
   }else{
-    par(mar = c(4, 6, 4, 1))
+    par(mar = c(4, 6, 1, 1))
     plot(data$results$M_year, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_year)),
          xlab = xlab , ylab = expression(paste("M (year"^"-1", ")")), bg = bg , axes = FALSE, ...)
     axis(1, seq(from = 1, to = nrow(data$results), by = 1))

@@ -150,7 +150,7 @@ gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
     abundance[i]  <- fecundity*(exp(-G))^(i)
   }
 
-  tab <- data.frame(Gnomomic_interval     = seq_len(nInterval),
+  tab <- data.frame(Gnomonic_interval     = seq_len(nInterval),
                     interval_duration_day = round(output$delta, 3),
                     total_duration        = round(cumsum(output$delta), 0),
                     M_day                 = round(M, 3),

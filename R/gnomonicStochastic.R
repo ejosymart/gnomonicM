@@ -152,7 +152,7 @@ gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity
   }
 
 
-  tab <- data.frame(Gnomomic_interval = seq_len(nInterval),
+  tab <- data.frame(Gnomonic_interval = seq_len(nInterval),
                     duration          = round(output$delta, 3),
                     total_duration    = round(cumsum(output$delta), 0),
                     M_lower           = as.numeric(M_IC[1,]),

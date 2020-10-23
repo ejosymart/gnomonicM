@@ -24,7 +24,7 @@ gnomonicStochastic(
 
 \item{eggDuration}{a numeric value with the egg stage (first gnomonic interval) duration in days.}
 
-\item{addInfo}{a numeric vector with additional information related to the observed duration of the other gnomonic intervals. Write \code{addInfo = NULL} if you do not provide additional information.}
+\item{addInfo}{a numeric vector with additional information related to the observed duration of the other gnomonic intervals differents to the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.}
 
 \item{longevity}{a numeric value indicating the lifespan of the species in days.}
 

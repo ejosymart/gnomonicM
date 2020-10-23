@@ -275,7 +275,7 @@ Giménez-Hurtado E, Arreguín-Sánchez F, Lluch-Cota SE. 2009. Natural Mortality
 
 Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E. 2005. Natural mortality and life history stage duration of Pacific sardine (*Sardinops caeruleus*) based on gnomonic time divisions. Fisheries Research 71:103–114. DOI: 10.1016/j.fishres.2004.04.008.
 
-Martínez-Aguilar S, Díaz Uribe JG, De Anda-Montañez JA, Cisneros-Mata MÁ. 2010. Natural mortality and life history stage duration for the jumbo squid (*Dosidicus gigas*) in the Gulf of California, Mexico, using the gnomonic time division. Ciencia Pesquera 18:31–42.
+Martínez-Aguilar S, Díaz Uribe JG, De Anda-Montañez JA, Cisneros-Mata MA. 2010. Natural mortality and life history stage duration for the jumbo squid (*Dosidicus gigas*) in the Gulf of California, Mexico, using the gnomonic time division. Ciencia Pesquera 18:31–42.
 
 Ramírez-Rodríguez M, Arreguín-Sánchez F. 2003. Life history stage duration and natural mortality for the pink shrimp *Farfantepenaeus duorarum* (Burkenroad, 1939) in the southern Gulf of Mexico, using the gnomonic model for time division. Fisheries Research 60:45–51. DOI: 10.1016/S0165-7836(02)00064-4.
 

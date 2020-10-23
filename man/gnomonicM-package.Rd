@@ -54,7 +54,7 @@ The \eqn{M_{i}} is estimated as follows:
 \deqn{M_{i} = \frac{G}{\Delta_{i, i-1}}}
 
 where \eqn{G} is the constant proportion of the overall natural death rate. The \eqn{G} value is calculated so that the number  of individuals surviving to the last
-gnomonic time-interval is \eqn{N_{n} = 2} following the assumptiion of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
+gnomonic time-interval is \eqn{N_{n} = 2} following the assumption of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
 The new equation for \eqn{G} is expressed:
 
 \deqn{G = -ln((\frac{2}{MLF})^{\frac{1}{n}})}

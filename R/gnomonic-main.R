@@ -56,7 +56,7 @@
 #' \deqn{M_{i} = \frac{G}{\Delta_{i, i-1}}}
 #'
 #' where \eqn{G} is the constant proportion of the overall natural death rate. The \eqn{G} value is calculated so that the number  of individuals surviving to the last
-#' gnomonic time-interval is \eqn{N_{n} = 2} following the assumptiion of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
+#' gnomonic time-interval is \eqn{N_{n} = 2} following the assumption of stable population replacement (Caddy, 1996; Martinez-Aguilar, 2005).
 #' The new equation for \eqn{G} is expressed:
 #'
 #' \deqn{G = -ln((\frac{2}{MLF})^{\frac{1}{n}})}
@@ -79,7 +79,7 @@ NULL
 #' Estimate natural mortality based on gnomonic interval approach.
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
 #' @param eggDuration a numeric value with the egg stage (first gnomonic interval) duration in days.
-#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals differents to the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.
+#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals different to the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species in days.
 #' @param fecundity a numeric value indicating the mean lifetime fecundity (MLF) as the number of eggs produced for a female.
 #' @param a_init a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.

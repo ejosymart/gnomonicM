@@ -4,7 +4,7 @@
 #'
 #' @param nInterval a numeric value that represents the number of gnomonic intervals.
 #' @param eggDuration a numeric value with the egg stage (first gnomonic interval) duration in days.
-#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals differents to the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.
+#' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals different to the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species in days.
 #' @param fecundity a numeric value indicating the mean or the mode of the fecundity as the number of eggs produced for a female if a normal or triangular distribution is assumed, respectively.
 #' @param sd_fecundity a numeric value indicating the standard deviation of fecundity if a normal distribution is assumed.

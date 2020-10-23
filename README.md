@@ -1,8 +1,11 @@
 # gnomonicM
 
 **Estimate Natural Mortality (M) throughout the life history of
-species** This package allows to estimate Natural mortality for different life stages for organism, usually fish and invertebrates, based on the gnomonic interval approach (Caddy, 1991, 1996; Martínez-Aguilar et al., 2005). We have included improvements modifying some equations and the estimation procedure.
-
+species** This package allows to estimate Natural mortality for
+different life stages for organism, usually fish and invertebrates,
+based on the gnomonic interval approach (Caddy, 1991, 1996;
+Martínez-Aguilar et al., 2005). We have included improvements modifying
+some equations and the estimation procedure.
 
 ## Installation
 
@@ -38,7 +41,7 @@ model <- gnomonic(nInterval   = 7,
                   a_init      = 2)
 #> -------------------------------------------------------- 
 #> 
-#> You are only considering the egg stage duration = 2 
+#> No additional information. You are only considering the egg stage duration = 2 
 #> 
 #> --------------------------------------------------------
 
@@ -53,7 +56,7 @@ print(model)
 #> 
 #> Main results of gnomonic method: 
 #> 
-#>   Gnonomic_interval interval_duration_day total_duration M_day  M_year No_Surv
+#>   Gnomonic_interval interval_duration_day total_duration M_day  M_year No_Surv
 #> 1                 1                 2.000              2 0.822 300.158   38614
 #> 2                 2                 2.763              5 0.595 217.247    7455
 #> 3                 3                 6.581             11 0.250  91.217    1439
@@ -63,7 +66,7 @@ print(model)
 #> 7                 7               211.745            365 0.008   2.835       2
 ```
 
-## Stochastic
+## Stochastic method
 
 ``` r
 modelUniform <- gnomonicStochastic(nInterval     = 7, 
@@ -76,7 +79,7 @@ modelUniform <- gnomonicStochastic(nInterval     = 7,
                                    a_init        = 2)
 #> -------------------------------------------------------- 
 #> 
-#> You are only considering the egg stage duration = 2 
+#> No additional information. You are only considering the egg stage duration = 2 
 #> 
 #> -------------------------------------------------------- 
 #> 

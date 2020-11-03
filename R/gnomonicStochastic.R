@@ -230,6 +230,8 @@ plot.gnomosBoot <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
   data <- x
 
   if(isTRUE(dayUnits)){
+    oldpar <- par(no.readonly = TRUE)
+    on.exit(par(oldpar))
     par(mar = c(4, 6, 1, 1))
     boxplot(data$M, boxwex = boxwex, xlab = xlab,
             ylab = expression(paste("M (day"^"-1", ")")), col = col, axes = FALSE, ...)
@@ -237,6 +239,8 @@ plot.gnomosBoot <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
     axis(2, las = 2)
     box()
   }else{
+    oldpar <- par(no.readonly = TRUE)
+    on.exit(par(oldpar))
     par(mar = c(4, 6, 1, 1))
     boxplot(data$M*365, boxwex = boxwex, xlab = xlab,
             ylab = expression(paste("M (year"^"-1", ")")), col = col, axes = FALSE, ...)

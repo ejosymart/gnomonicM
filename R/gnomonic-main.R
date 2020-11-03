@@ -220,6 +220,8 @@ plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
   data <- x
 
   if(isTRUE(dayUnits)){
+    oldpar <- par(no.readonly = TRUE)
+    on.exit(par(oldpar))
     par(mar = c(4, 6, 1, 1))
     plot(data$results$M_day, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_day)),
          xlab = xlab , ylab = expression(paste("M (day"^"-1", ")")), bg = bg , axes = FALSE, ...)
@@ -227,6 +229,8 @@ plot.gnomos <- function(x, xlab = "Gnomonic intervals", ylab = NULL,
     axis(2, las = 2)
     box()
   }else{
+    oldpar <- par(no.readonly = TRUE)
+    on.exit(par(oldpar))
     par(mar = c(4, 6, 1, 1))
     plot(data$results$M_year, type = "b", cex = cex, pch = pch, lwd = 3, ylim = c(0, 1.1*max(data$results$M_year)),
          xlab = xlab , ylab = expression(paste("M (year"^"-1", ")")), bg = bg , axes = FALSE, ...)

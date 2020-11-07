@@ -147,7 +147,7 @@ plot(model_cm_lf, main = "Natural mortality vector estimated \nfor chub mackerel
 ```
 
 
-## 3 Different distributions in *MLF*
+## 3. Different distributions in *MLF*
 In this section, we test different distribution functions in the *MLF* via the argument `distr`. There are three options: `distr = 'normal'`, `distr = 'uniform'` and `distr = 'triangle'`. You must include particular information related to the minimum, maximum, mean, and standard deviation (sd) of *MLF* based on the particular distribution function. 
 
 ```{r echo=TRUE}
@@ -191,8 +191,8 @@ plot(modelTriangle, main = "Triangular distribution in MLF")
 ```
 
 
-## 4 Testing in other species 
-This section shows the applications to published data that used the gnomonic model (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave the chance to assess the approach in different taxa (fish, invertebrates) and history life (demersal, pelagic, benthic, short, and large life span).
+## 4. Testing in other species 
+This section shows the applications to published data that used the gnomonic model (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave the chance to assess the approach in different taxa (fish, invertebrates) and life-history (demersal, pelagic, benthic, short, and large life span).
 
 
 ```{r echo=TRUE}
@@ -264,7 +264,7 @@ plot(Isostichopus, main = "M for Isostichopus badionotus", col = "skyblue", dayU
 ```
 
 
-### References
+## 5. References
 Aranceta-Garza F, Arreguín-Sánchez F, Ponce-Díaz G, Seijo JC. 2016. Natural mortality of three commercial penaeid shrimps (*Litopenaeus vannamei*, *L. stylirostris* and *Farfantepenaeus californiensis*) of the Gulf of California using gnomonic time divisions. Scientia Marina 80:199–206. DOI: 10.3989/scimar.04326.29A
 
 Caddy JF. 1991. Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Reviews in Fish Biology and Fisheries 1:109–138. DOI: 10.1007/BF00157581.

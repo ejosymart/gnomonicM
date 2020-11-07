@@ -65,11 +65,11 @@ The final solution is to estimate the proportionality constant (\eqn{\alpha}) pa
 #See examples for functions gnomonic() and gnomonicStochastic().
 }
 \references{
-Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.
+Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi:10.1007/BF00157581.
 
-Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
+Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi:10.1051/alr:1996023.
 
-Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi: 10.1016/j.fishres.2004.04.008.
+Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi:10.1016/j.fishres.2004.04.008.
 }
 \author{
 Josymar Torrejon-Magallanes <ejosymart@gmail.com>

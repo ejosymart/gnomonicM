@@ -63,9 +63,9 @@
 #'
 #' The final solution is to estimate the proportionality constant (\eqn{\alpha}) parameter by iterative solution via univariate (1-dim.) minimization.
 #'
-#' @references Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi: 10.1007/BF00157581.
-#' @references Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi: 10.1051/alr:1996023.
-#' @references Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi: 10.1016/j.fishres.2004.04.008.
+#' @references Caddy JF (1991). Death rates and time intervals: is there an alternative to the constant natural mortality axiom? Rev Fish Biol Fish 1:109–138. doi:10.1007/BF00157581.
+#' @references Caddy JF (1996). Modelling natural mortality with age in short-lived invertebrate populations: definition of a strategy of gnomonic time division. Aquat Living Resour 9:197–207. doi:10.1051/alr:1996023.
+#' @references Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005). Natural mortality and life history stage duration of Pacific sardine (Sardinops caeruleus) based on gnomonic time divisions. Fish Res 71:103–114. doi:10.1016/j.fishres.2004.04.008.
 #' @concept gnomonic
 #' @concept natural mortality
 #' @concept fecundity

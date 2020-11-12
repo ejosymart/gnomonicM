@@ -137,9 +137,9 @@ In the previous plots, by default, the M values have $day^{-1}$ units (`dayUnits
 
 ```{r echo = TRUE}
 par(mar = c(6,6,6,6))
-plot(model_cm_hf, main = "Natural mortality vector estimated \nfor chub mackerel \n egg duration = 2.33 days, MLF = [11 805 - 144 543]", dayUnits = FALSE)
+plot(model_cm_hf, main = "M for chub mackerel, MLF = [11 805 - 144 543]", dayUnits = FALSE)
 
-plot(model_cm_lf, main = "Natural mortality vector estimated \nfor chub mackerel \n egg duration = 2.33 days, MLF = [7 603 - 53 921]", dayUnits = FALSE)
+plot(model_cm_lf, main = "M for chub mackerel, MLF = [7 603 - 53 921]", dayUnits = FALSE)
 ```
 
 
@@ -181,7 +181,7 @@ modelTriangle <- gnomonicStochastic(nInterval     = 7,
 
 
 ```{r echo = TRUE}
-plot(modelUniformAddInfo, main = "Uniform distribution in MLF \nwith additional information in \nsome gnomonic intervals")
+plot(modelUniformAddInfo, main = "Uniform distribution in MLF, with additional information")
 plot(modelNormal, main = "Normal distribution in MLF")
 plot(modelTriangle, main = "Triangular distribution in MLF")
 ```

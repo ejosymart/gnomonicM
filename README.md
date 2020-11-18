@@ -95,13 +95,13 @@ For more details, please read the vignettes of this package.
 
 Caddy JF (1991). Death rates and time intervals: is there an alternative
 to the constant natural mortality axiom? Reviews in Fish Biology and
-Fisheries 1:109–138. DOI: 10.1007/BF00157581.
+Fisheries 1:109–138. doi:10.1007/BF00157581.
 
 Caddy JF (1996). Modelling natural mortality with age in short-lived
 invertebrate populations: definition of a strategy of gnomonic time
-division. Aquatic Living Resource 9:197–207. DOI: 10.1051/alr:1996023.
+division. Aquatic Living Resource 9:197–207. doi:10.1051/alr:1996023.
 
 Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005).
 Natural mortality and life history stage duration of Pacific sardine
 (*Sardinops caeruleus*) based on gnomonic time divisions. Fisheries
-Research 71:103–114. DOI: 10.1016/j.fishres.2004.04.008.
+Research 71:103–114. doi:10.1016/j.fishres.2004.04.008.

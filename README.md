@@ -1,7 +1,7 @@
 # gnomonicM
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/gnomonicM)](http://cran.r-project.org/package=gnomonicM)
-[![](http://cranlogs.r-pkg.org/badges/gnomonicM)](http://cran.rstudio.com/web/packages/gnomonicM/index.html)
+[![](http://cranlogs.r-pkg.org/badges/gnomonicM)](http://cran.rstudio.com/web/packages/gnomonicM/index.html)[![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/gnomonicM)](https://cran.r-project.org/package=gnomonicM)[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.6-6666ff.svg)](https://cran.r-project.org/)
 
 **Estimate Natural Mortality (M) throughout the life history of
 species** This package allows to estimate Natural mortality for

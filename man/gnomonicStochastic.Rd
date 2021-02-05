@@ -14,7 +14,7 @@ gnomonicStochastic(
   min_fecundity = NULL,
   max_fecundity = NULL,
   distr = "uniform",
-  a_init,
+  a_init = 2,
   niter = 999,
   seed = 7388
 )
@@ -38,7 +38,7 @@ gnomonicStochastic(
 
 \item{distr}{a character string indicating the distribution to be applied: \code{"uniform"}, \code{"triangle"} or \code{"normal"}}
 
-\item{a_init}{a numeric value indicating the initial parameter related to the proportionality constant optimized by iterative solution via univariate (1-dim.) minimization.}
+\item{a_init}{a numeric value indicating the initial parameter related to the proportionality constant optimized by iterative solution via univariate (1-dim.) minimization. \code{a_init = 2} as default value.}
 
 \item{niter}{a single numeric value representing the number of iterations.}
 

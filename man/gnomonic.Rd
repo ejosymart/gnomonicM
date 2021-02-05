@@ -4,7 +4,14 @@
 \alias{gnomonic}
 \title{Gnomonic deterministic}
 \usage{
-gnomonic(nInterval, eggDuration, addInfo = NULL, longevity, fecundity, a_init)
+gnomonic(
+  nInterval,
+  eggDuration,
+  addInfo = NULL,
+  longevity,
+  fecundity,
+  a_init = 2
+)
 }
 \arguments{
 \item{nInterval}{a numeric value that represents the number of gnomonic intervals.}
@@ -17,7 +24,7 @@ gnomonic(nInterval, eggDuration, addInfo = NULL, longevity, fecundity, a_init)
 
 \item{fecundity}{a numeric value indicating the mean lifetime fecundity (MLF) as the number of eggs produced for a female.}
 
-\item{a_init}{a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.}
+\item{a_init}{a numeric value indicating the initial parameter related to the proportionality  optimized by iterative solution via univariate (1-dim.) minimization. \code{a_init = 2} as default value.}
 }
 \value{
 A list of class 'gnomos'.

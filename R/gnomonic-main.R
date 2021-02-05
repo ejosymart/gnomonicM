@@ -3,6 +3,7 @@
 #' @importFrom minqa newuoa
 #' @importFrom triangle rtriangle
 #' @importFrom grDevices colors
+#' @importFrom kableExtra kbl kable_styling
 #' @importFrom graphics axis box boxplot points hist par abline
 #' @importFrom stats quantile rnorm runif sd
 #' @importFrom utils installed.packages

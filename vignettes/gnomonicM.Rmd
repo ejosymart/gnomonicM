@@ -92,8 +92,7 @@ print(model_lf)
 plot(model_lf, xlab = "My X label", ylab = "My Y label", cex = 3, bg = "blue")
 ```
 
-For comparative purposes, we present the results provided by Caddy (1996). 
-Note: We have multiplied the interval duration by 365 in order to have day units.
+**For comparative purposes, we present the results provided by Caddy (1996).** *Note: We have multiplied the interval duration by 365 in order to have day units.*
 
 ```{r, echo=FALSE, }
 data_hf <- data.frame(Gnomonic_interval = 1:7, 

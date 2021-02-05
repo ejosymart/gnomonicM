@@ -11,7 +11,7 @@
 #' @param min_fecundity a numeric value indicating the minimum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param max_fecundity a numeric value indicating the maximum range of fecundity if a uniform or triangle distribution is assumed.
 #' @param distr a character string indicating the distribution to be applied: \code{"uniform"}, \code{"triangle"} or \code{"normal"}
-#' @param a_init a numeric value indicating the initial parameter related to the proportionality constant optimized by iterative solution via univariate (1-dim.) minimization.
+#' @param a_init a numeric value indicating the initial parameter related to the proportionality constant optimized by iterative solution via univariate (1-dim.) minimization. \code{a_init = 2} as default value.
 #' @param niter a single numeric value representing the number of iterations.
 #' @param seed a single value, interpreted as an integer.
 #' @return A list of class 'gnomosBoot'.
@@ -52,7 +52,7 @@
 #' @export
 gnomonicStochastic <- function(nInterval, eggDuration, addInfo = NULL, longevity,
                                fecundity = NULL, sd_fecundity = NULL, min_fecundity = NULL, max_fecundity = NULL,
-                               distr = "uniform", a_init,  niter = 999, seed = 7388){
+                               distr = "uniform", a_init = 2,  niter = 999, seed = 7388){
 
   set.seed(seed)
 

@@ -82,7 +82,7 @@ NULL
 #' @param addInfo a numeric vector with additional information related to the observed duration of the other gnomonic intervals different than the first interval (egg stage duration). Write \code{addInfo = NULL} if you do not provide additional information.
 #' @param longevity a numeric value indicating the lifespan of the species in days.
 #' @param fecundity a numeric value indicating the mean lifetime fecundity (MLF) as the number of eggs produced for a female.
-#' @param a_init a numeric value indicating the initial parameter related to the proportionality constant which will be optimized.
+#' @param a_init a numeric value indicating the initial parameter related to the proportionality  optimized by iterative solution via univariate (1-dim.) minimization. \code{a_init = 2} as default value.
 #' @return A list of class 'gnomos'.
 #'
 #' \code{a} the proportionality constant.
@@ -116,7 +116,7 @@ NULL
 #' model$results
 #' @export
 gnomonic <- function(nInterval, eggDuration, addInfo = NULL,
-                     longevity, fecundity, a_init){
+                     longevity, fecundity, a_init = 2){
 
 
   if(is.null(addInfo)){

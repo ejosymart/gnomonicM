@@ -1,11 +1,5 @@
 # gnomonicM
 
-[![packageversion](https://img.shields.io/badge/Package%20version-1.0.1-orange.svg?style=flat-square)](commits/master)
-[![metacran
-downloads](http://cranlogs.r-pkg.org/badges/gnomonicM)](https://cran.rstudio.com/web/packages/gnomonicM/index.html)
-[![minimal R
-version](https://img.shields.io/badge/R%3E%3D-3.6.0-6666ff.svg)](https://cran.r-project.org/)
-
 **Estimate Natural Mortality (M) throughout the life history of
 species** This package allows to estimate Natural mortality for
 different life stages for organism, usually fish and invertebrates,

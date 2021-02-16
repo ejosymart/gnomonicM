@@ -5,5 +5,5 @@
 
 # gnomonicM 1.0.1
 
-* Update the initial value for the proportionality constant (alpha)
-* Include comparative with previus studies that use the gnomonic approach.
+* Update the description and set the initial value for the proportionality constant (alpha)
+* Include comparative with previous studies that use the gnomonic approach and the original study by Caddy (1996).

@@ -9,18 +9,20 @@ some equations and the estimation procedure.
 
 ## Installation
 
-``` r
-install.packages("gnomonicM")
-```
-
-Or the development version from github:
+Get the development version from github:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("ejosymart/gnomonicM")
 ```
 
-After that call the package:
+Or install the CRAN version:
+
+``` r
+install.packages("gnomonicM")
+```
+
+After, that call the package:
 
 ``` r
 library("gnomonicM")

@@ -8,6 +8,7 @@
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/gnomonicM)](https://cran.r-project.org/package=gnomonicM)
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/gnomonicM)](https://cran.rstudio.com/web/packages/gnomonicM/index.html)
+[![total](http://cranlogs.r-pkg.org/badges/grand-total/gnomonicM)](https://www.rpackages.io/package/gnomonicM)
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.6-6666ff.svg)](https://cran.r-project.org/)
 

@@ -300,4 +300,6 @@ Martínez-Aguilar S, Díaz Uribe JG, De Anda-Montañez JA, Cisneros-Mata MA. 201
 
 [Ramírez-Rodríguez M, Arreguín-Sánchez F. 2003. Life history stage duration and natural mortality for the pink shrimp *Farfantepenaeus duorarum* (Burkenroad, 1939) in the southern Gulf of Mexico, using the gnomonic model for time division. Fisheries Research 60:45–51.](https://doi.org/10.1016/S0165-7836(02)00064-4)
 
-[Romero-Gallardo S, Velazquez-Abunader I, Alberto Lopez-Rocha J, Garza-Gisholt E. 2018. Natural mortality estimates throughout the life history of the sea cucumber *Isostichopus badionotus* (Holothuroidea: Aspidochirotida). PeerJ 6:e5235.](https://peerj.com/articles/5235/)
+[Romero-Gallardo S, Velázquez-Abunader I, López-Rocha JA, Garza-Gisholt E. 2018. Natural mortality estimates throughout the life history of the sea cucumber Isostichopus Badionotus (Holothuroidea: Aspidochirotida). PeerJ 6:e5235.](https://peerj.com/articles/5235/)
+
+[Torrejón-Magallanes J, Morales-Bojórquez E, Arreguín-Sánchez F. 2021. Improving the gnomonic approach with the gnomonicM R-package to estimate natural mortality throughout different life stages. PeerJ 9:e11229.](https://peerj.com/articles/11229/)

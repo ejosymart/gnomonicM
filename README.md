@@ -122,3 +122,8 @@ Martínez-Aguilar S, Arreguín-Sánchez F, Morales-Bojórquez E (2005).
 Natural mortality and life history stage duration of Pacific sardine
 (*Sardinops caeruleus*) based on gnomonic time divisions. Fisheries
 Research 71:103–114. DOI: 10.1016/j.fishres.2004.04.008.
+
+Torrejón-Magallanes J, Morales-Bojórquez E, Arreguín-Sánchez F. 2021.
+Improving the gnomonic approach with the gnomonicM R-package to estimate
+natural mortality throughout different life stages. PeerJ 9:e11229. DOI:
+10.7717/peerj.11229.

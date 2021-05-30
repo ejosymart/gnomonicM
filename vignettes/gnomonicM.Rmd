@@ -122,7 +122,7 @@ The function to be used to estimate *M* is `gnomonicStochastic`. The previous es
 
 We have included three different distribution function via the argument `distr`. It could be normal: `distr = 'normal'`, uniform: `distr = 'uniform'`, and triangular: `distr = 'triangle'`. Once you have chosen a particular distribution function, you must to include information related with the minimum, maximum, mean and standard deviation (sd) of *MLF*. 
 
-We will use the information reported by the chub mackerel, based on an (i) eight gnomonic intervals, (ii) egg stage duration of 2.33 days (56 hours), (iii) a longevity of eight years (2920 days), (iv) a mean lifetime fecundity (*MLF*) of 78174 [11805 - 144543] and 28978 [7603 - 53921] eggs assuming uniform distribution, and (v) initial constant proportionality ($\alpha$) value of 2. We simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval, and the standard deviation ($\sigma_{i}$).
+We will use the information reported by the chub mackerel (see Torrejón-Magallanes *et al*., 2021), based on an (i) eight gnomonic intervals, (ii) egg stage duration of 2.33 days (56 hours), (iii) a longevity of eight years (2920 days), (iv) a mean lifetime fecundity (*MLF*) of 78174 [11805 - 144543] and 28978 [7603 - 53921] eggs assuming uniform distribution, and (v) initial constant proportionality ($\alpha$) value of 2. We simulated 1000 estimates of natural mortality for each gnomonic intervals and estimated mean mortality rate ($\bar{M_i}$), the confidence interval, and the standard deviation ($\sigma_{i}$).
 
 ```{r echo=TRUE}
 model_cm_hf <- gnomonicStochastic(nInterval     = 8, 
@@ -212,7 +212,7 @@ plot(modelTriangle, main = "Triangular distribution in MLF")
 
 
 ## 4. Testing in other species 
-This section shows the applications to published data that used the gnomonic model (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar et al (2005); Giménez-Hurtado et al. (2009); Martínez-Aguilar et al. (2010); Aranceta-Garza et al. (2016); Romero-Gallardo et al. (2018)). It gave the chance to assess the approach in different taxa (fish, invertebrates) and life-history (demersal, pelagic, benthic, short, and large life span).
+This section shows the applications to published data that used the gnomonic model (see, Ramírez-Rodríguez & Arreguín-Sánchez (2003); Martínez-Aguilar *et al*. (2005); Giménez-Hurtado *et al*. (2009); Martínez-Aguilar *et al*. (2010); Aranceta-Garza *et al*. (2016); Romero-Gallardo *et al*. (2018)). It gave the chance to assess the approach in different taxa (fish, invertebrates) and life-history (demersal, pelagic, benthic, short, and large life span).
 
 
 ```{r echo=TRUE}

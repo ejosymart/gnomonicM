@@ -22,8 +22,9 @@ version](https://img.shields.io/badge/R%3E%3D-3.6-6666ff.svg)](https://cran.r-pr
 species** This package allows to estimate Natural mortality for
 different life stages for organism, usually fish and invertebrates,
 based on the gnomonic interval approach (Caddy, 1991, 1996;
-Martínez-Aguilar et al., 2005). We have included improvements modifying
-some equations and the estimation procedure.
+Martínez-Aguilar *et al*., 2005). We have included improvements
+modifying some equations and the estimation procedure (see
+Torrejón-Magallanes *et al*. 2021).
 
 ## Installation
 
